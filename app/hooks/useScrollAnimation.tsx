@@ -32,6 +32,91 @@ export function useScrollAnimation(threshold = 0.1) {
   return { ref: elementRef, isVisible }
 }
 
+// Basic animation hook for components
+export function useScrollAnimationBasic({ 
+  threshold = 0.1, 
+  rootMargin = "0px", 
+  triggerOnce = true 
+}: { 
+  threshold?: number
+  rootMargin?: string
+  triggerOnce?: boolean
+} = {}) {
+  const [isVisible, setIsVisible] = useState(false)
+  const elementRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const element = elementRef.current
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          if (triggerOnce) {
+            observer.unobserve(element)
+          }
+        } else if (!triggerOnce) {
+          setIsVisible(false)
+        }
+      },
+      {
+        threshold,
+        rootMargin
+      }
+    )
+
+    observer.observe(element)
+
+    return () => {
+      observer.unobserve(element)
+    }
+  }, [threshold, rootMargin, triggerOnce])
+
+  return { elementRef, isVisible }
+}
+
+// Staggered animation hook for multiple items
+export function useStaggeredScrollAnimation(itemCount: number) {
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false))
+  const elementRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const element = elementRef.current
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Trigger items one by one with delay
+          for (let i = 0; i < itemCount; i++) {
+            setTimeout(() => {
+              setVisibleItems(prev => {
+                const newState = [...prev]
+                newState[i] = true
+                return newState
+              })
+            }, i * 150) // 150ms delay between each item
+          }
+          observer.unobserve(element)
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      }
+    )
+
+    observer.observe(element)
+
+    return () => {
+      observer.unobserve(element)
+    }
+  }, [itemCount])
+
+  return { elementRef, visibleItems }
+}
+
 // Simple animation utility class generator
 export function getAnimationClass(isVisible: boolean, animationType = "fadeUp", delay = 0) {
   const baseClasses = "transition-all duration-700 ease-out"
