@@ -2,18 +2,18 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, MapPin, Clock, Mail } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { t } = useLanguage()
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
-    { name: "Menu", href: "#choice" },
-    { name: "Locations", href: "#locations" },
-    { name: "Contact", href: "#contact" },
+    { name: t("story.header"), href: "#story" },
+    { name: t("menu.header"), href: "#menu" },
+    { name: t("contact.header"), href: "#contact" },
   ]
 
   useEffect(() => {
@@ -28,8 +28,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/95 backdrop-blur-md shadow-xl" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        isScrolled ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-warmGray" : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 lg:px-8">
@@ -37,9 +37,9 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-white font-bold text-2xl lg:text-3xl hover:text-red-500 transition-colors duration-300"
+            className="text-charcoal font-heading font-bold text-xl lg:text-2xl hover:text-terracotta transition-colors duration-300 tracking-wider"
           >
-            HotBite
+            COPT DE FERICIRE
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,7 +48,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white hover:text-red-500 transition-colors duration-300 font-medium text-lg"
+                className="text-charcoal hover:text-terracotta transition-colors duration-300 font-open-sans font-medium text-base uppercase tracking-wider"
               >
                 {item.name}
               </Link>
@@ -58,23 +58,23 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link
-              href="tel:+15551234567"
-              className="flex items-center text-white hover:text-red-400 transition-colors duration-300 font-medium"
+              href="tel:+40721234567"
+              className="flex items-center text-charcoal hover:text-terracotta transition-colors duration-300 font-medium"
             >
               <Phone className="w-4 h-4 mr-2" />
-              <span className="text-sm">(555) 123-4567</span>
+              <span className="text-sm font-open-sans">{t("contact.phone")}</span>
             </Link>
             <Link
               href="#contact"
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-terracotta hover:bg-terracotta-600 text-cream px-6 py-3 rounded-lg font-heading font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              BOOK TABLE
+              {t("contact.reserveTable")}
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden text-white p-2 rounded-lg hover:bg-black/50 transition-colors duration-300"
+            className="lg:hidden text-charcoal p-2 rounded-lg hover:bg-warmGray hover:text-terracotta transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -83,32 +83,32 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-black/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl">
+          <div className="lg:hidden bg-cream/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl border border-warmGray">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-white hover:text-red-500 transition-colors duration-300 font-medium px-6 py-2 text-center"
+                  className="text-charcoal hover:text-terracotta transition-colors duration-300 font-open-sans font-medium px-6 py-2 text-center uppercase tracking-wider"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-gray-800">
+              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-warmGray">
                 <Link
-                  href="tel:+15551234567"
-                  className="flex items-center justify-center text-white hover:text-red-400 transition-colors duration-300 font-medium py-2"
+                  href="tel:+40721234567"
+                  className="flex items-center justify-center text-charcoal hover:text-terracotta transition-colors duration-300 font-medium py-2"
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  (555) 123-4567
+                  <span className="font-open-sans">{t("contact.phone")}</span>
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-bold text-center transition-all duration-300"
+                  className="bg-terracotta hover:bg-terracotta-600 text-cream py-3 px-6 rounded-lg font-heading font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  BOOK TABLE
+                  {t("contact.reserveTable")}
                 </Link>
               </div>
             </div>

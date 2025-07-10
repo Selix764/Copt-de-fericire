@@ -8,13 +8,13 @@
   }
 
   body {
-    font-family: var(--font-inter);
-    background-color: #faf2e1;
-    color: #1e2a4a;
+    font-family: var(--font-open-sans);
+    background-color: #F6F2EC;
+    color: #3A2D2D;
   }
 
-  .font-serif {
-    font-family: var(--font-playfair);
+  .font-heading {
+    font-family: var(--font-montserrat);
   }
 }
 

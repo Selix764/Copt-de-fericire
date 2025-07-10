@@ -1,17 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css"
-import ClientLayout from "./components/ClientLayout"
+import { LanguageProvider } from "./contexts/LanguageContext"
+import Header from "./components/Header"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+})
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-open-sans",
+})
 
 export const metadata: Metadata = {
-  title: "HotBite Restaurant - Taste the Perfect Bite",
-  description:
-    "Experience culinary excellence with our chef-crafted dishes made from the finest ingredients. Every bite tells a story of passion and flavor.",
-  generator: 'v0.dev'
+  title: "Copt de Fericire - Authentic Romanian Restaurant",
+  description: "Experience authentic Romanian culinary traditions in a warm and welcoming atmosphere. Traditional dishes prepared with passion and respect for recipes passed down through generations.",
+}
+
+function ClientLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <LanguageProvider>
+      <Header />
+      {children}
+    </LanguageProvider>
+  )
 }
 
 export default function RootLayout({
@@ -20,9 +37,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans bg-gray-900 text-white">
-        <ClientLayout>{children}</ClientLayout>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
+      <body>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   )
