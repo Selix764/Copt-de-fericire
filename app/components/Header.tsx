@@ -11,9 +11,9 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "#about" },
-    { name: "Menu", href: "#menu" },
-    { name: "Locations", href: "/locations" },
-    { name: "Contact", href: "/contact" },
+    { name: "Menu", href: "#choice" },
+    { name: "Locations", href: "#locations" },
+    { name: "Contact", href: "#contact" },
   ]
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gray-900/95 backdrop-blur-md shadow-xl" : "bg-transparent"
+        isScrolled ? "bg-black/95 backdrop-blur-md shadow-xl" : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 lg:px-8">
@@ -74,7 +74,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+            className="lg:hidden text-white p-2 rounded-lg hover:bg-black/50 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -83,7 +83,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-gray-900/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl">
+          <div className="lg:hidden bg-black/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
@@ -95,7 +95,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-gray-700">
+              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-gray-800">
                 <Link
                   href="tel:+15551234567"
                   className="flex items-center justify-center text-white hover:text-red-400 transition-colors duration-300 font-medium py-2"

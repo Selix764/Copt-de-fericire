@@ -1,4 +1,4 @@
-"use client"
++"use client"
 
 import { useScrollAnimationBasic } from "../hooks/useScrollAnimation"
 import { ReactNode, HTMLAttributes } from "react"

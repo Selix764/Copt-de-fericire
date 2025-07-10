@@ -2,7 +2,6 @@
 
 import type React from "react"
 import Header from "./Header"
-import Footer from "./Footer"
 import { LanguageProvider } from "../contexts/LanguageContext"
 
 export default function ClientLayout({
@@ -14,7 +13,6 @@ export default function ClientLayout({
     <LanguageProvider>
       <Header />
       <main>{children}</main>
-      <Footer />
     </LanguageProvider>
   )
 } 
