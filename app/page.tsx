@@ -421,20 +421,19 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile PDF Viewer - Enhanced for Mobile Display */}
+              {/* Mobile PDF Viewer - Google Drive Embed for Mobile */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
-                    src="/api/menu-pdf#toolbar=1&navpanes=0&scrollbar=1&page=1&view=FitH"
+                    src="https://drive.google.com/file/d/1syb-SgovlRgSXTXgslq72fWAvQ7eOUxC/preview"
                     className="w-full h-full rounded-2xl border-0"
                     title="Restaurant Menu PDF"
                     style={{
                       minHeight: '100vh',
                       background: '#FFFFFF'
                     }}
-                    allow="fullscreen"
+                    allow="autoplay"
                     loading="eager"
-                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                     frameBorder="0"
                   />
                 </div>
