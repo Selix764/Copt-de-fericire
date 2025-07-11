@@ -7,7 +7,7 @@ import Header from "./components/Header"
 
 // Main Title Font - Tall, clean geometric sans-serif
 const montserrat = Montserrat({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-montserrat",
   weight: ["400", "600", "700"],
@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 
 // Body Copy Font - Simple, highly legible sans-serif
 const openSans = Open_Sans({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-open-sans",
   weight: ["400", "600"],
@@ -23,21 +23,21 @@ const openSans = Open_Sans({
 
 // Sub-title Font - Rounded, friendly sans-serif
 const poppins = Poppins({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-poppins",
   weight: ["400", "600", "700"],
 })
 
-// Section Label Font - Playful hand-drawn/display
+// Section Label Font - Playful hand-drawn/display (fallback for Romanian characters)
 const permanentMarker = Permanent_Marker({
   subsets: ["latin"],
-  display: "swap",
+  display: "swap", 
   variable: "--font-permanent-marker",
   weight: ["400"],
 })
 
-// Banner Text Font - Brush-stroke script
+// Banner Text Font - Brush-stroke script (fallback for Romanian characters)
 const rockSalt = Rock_Salt({
   subsets: ["latin"],
   display: "swap",

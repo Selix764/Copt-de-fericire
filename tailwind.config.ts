@@ -69,29 +69,29 @@ const config: Config = {
         }
       },
       fontFamily: {
-        // Main Title Font - Tall, clean geometric sans-serif
-        'heading': ['var(--font-montserrat)', 'sans-serif'],
-        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
+        // Main Title Font - Tall, clean geometric sans-serif (supports Romanian)
+        'heading': ['var(--font-montserrat)', 'Arial', 'sans-serif'],
+        'montserrat': ['var(--font-montserrat)', 'Arial', 'sans-serif'],
         
-        // Body Copy Font - Simple, highly legible sans-serif  
-        'open-sans': ['var(--font-open-sans)', 'sans-serif'],
-        'body': ['var(--font-open-sans)', 'sans-serif'],
+        // Body Copy Font - Simple, highly legible sans-serif (supports Romanian)
+        'open-sans': ['var(--font-open-sans)', 'Arial', 'sans-serif'],
+        'body': ['var(--font-open-sans)', 'Arial', 'sans-serif'],
         
-        // Sub-title Font - Rounded, friendly sans-serif
-        'poppins': ['var(--font-poppins)', 'sans-serif'],
-        'subtitle': ['var(--font-poppins)', 'sans-serif'],
+        // Sub-title Font - Rounded, friendly sans-serif (supports Romanian)
+        'poppins': ['var(--font-poppins)', 'Arial', 'sans-serif'],
+        'subtitle': ['var(--font-poppins)', 'Arial', 'sans-serif'],
         
-        // Section Label Font - Playful hand-drawn/display
-        'permanent-marker': ['var(--font-permanent-marker)', 'cursive'],
-        'section-label': ['var(--font-permanent-marker)', 'cursive'],
+        // Section Label Font - Playful hand-drawn/display (fallback to system fonts for Romanian)
+        'permanent-marker': ['var(--font-permanent-marker)', 'Arial', 'cursive'],
+        'section-label': ['var(--font-permanent-marker)', 'Arial', 'cursive'],
         
-        // Banner Text Font - Brush-stroke script
-        'rock-salt': ['var(--font-rock-salt)', 'cursive'],
-        'banner': ['var(--font-rock-salt)', 'cursive'],
+        // Banner Text Font - Brush-stroke script (fallback to system fonts for Romanian)
+        'rock-salt': ['var(--font-rock-salt)', 'Georgia', 'cursive'],
+        'banner': ['var(--font-rock-salt)', 'Georgia', 'cursive'],
         
-        // Price Badge Font - Bold, comic/cartoon display
-        'bangers': ['var(--font-bangers)', 'cursive'],
-        'price': ['var(--font-bangers)', 'cursive'],
+        // Price Badge Font - Bold, comic/cartoon display (fallback to system fonts for Romanian)
+        'bangers': ['var(--font-bangers)', 'Arial Black', 'cursive'],
+        'price': ['var(--font-bangers)', 'Arial Black', 'cursive'],
       },
       borderRadius: {
         lg: 'var(--radius)',

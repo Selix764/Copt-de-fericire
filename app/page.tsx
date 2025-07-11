@@ -214,8 +214,8 @@ export default function HomePage() {
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 1)}>
                   <div className="absolute -bottom-6 -left-6 bg-burst-yellow text-chalkboard p-6 rounded-2xl shadow-xl transition-transform hover:scale-110">
                     <div className="text-center">
-                      <div className="text-3xl font-heading font-bold">15+</div>
-                      <div className="text-sm font-open-sans">{t("story.yearsExperience")}</div>
+                      <div className="text-3xl font-montserrat font-bold">15+</div>
+                      <div className="text-sm font-body">{t("story.yearsExperience")}</div>
                     </div>
                   </div>
                 </div>
@@ -416,7 +416,7 @@ export default function HomePage() {
                 </div>
                 
                 <div className="text-center mt-6 text-chalk-white/70">
-                  <p className="text-base font-open-sans">
+                  <p className="text-base font-body">
                     {t("menu.troubleViewing")}
                     <a 
                       href="/api/menu-pdf" 
@@ -437,7 +437,7 @@ export default function HomePage() {
             <div className="text-center mt-8 sm:hidden">
               <a 
                 href="/api/menu-pdf" 
-                className="inline-flex items-center bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-heading font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -584,12 +584,12 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-heading font-semibold uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
                   {t("contact.header")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-chalk-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("contact.header")}
               </h2>
             </div>
@@ -609,35 +609,35 @@ export default function HomePage() {
                 </div>
 
                 <div className="bg-cream/20 backdrop-blur-sm rounded-2xl p-8 ml-8">
-                  <h3 className="text-2xl font-heading font-bold text-cream mb-8">{t("contact.restaurantDetails")}</h3>
+                  <h3 className="text-2xl font-poppins font-bold text-cream mb-8">{t("contact.restaurantDetails")}</h3>
                   
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-heading font-semibold text-cream mb-2">COPT DE FERICIRE</h4>
-                      <p className="text-cream/80 font-open-sans italic">{t("footer.tagline")}</p>
+                      <h4 className="text-lg font-poppins font-semibold text-cream mb-2">COPT DE FERICIRE</h4>
+                      <p className="text-cream/80 font-body italic">{t("footer.tagline")}</p>
                     </div>
                     
                     <div className="flex items-start text-cream">
                       <MapPin className="w-5 h-5 mr-3 mt-1 text-cream/80" />
                       <div>
-                        <h5 className="font-heading font-semibold mb-1">{t("contact.addressTitle")}</h5>
-                        <p className="font-open-sans whitespace-pre-line">{t("contact.address")}</p>
+                        <h5 className="font-poppins font-semibold mb-1">{t("contact.addressTitle")}</h5>
+                        <p className="font-body whitespace-pre-line">{t("contact.address")}</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start text-cream">
                       <Phone className="w-5 h-5 mr-3 mt-1 text-cream/80" />
                       <div>
-                        <h5 className="font-heading font-semibold mb-1">{t("contact.phoneTitle")}</h5>
-                        <p className="font-open-sans">{t("contact.phone")}</p>
+                        <h5 className="font-poppins font-semibold mb-1">{t("contact.phoneTitle")}</h5>
+                        <p className="font-body">{t("contact.phone")}</p>
                       </div>
                     </div>
                     
                     <div className="flex items-start text-cream">
                       <Clock className="w-5 h-5 mr-3 mt-1 text-cream/80" />
                       <div>
-                        <h5 className="font-heading font-semibold mb-1">{t("contact.hoursTitle")}</h5>
-                        <p className="font-open-sans whitespace-pre-line">{t("contact.hours")}</p>
+                        <h5 className="font-poppins font-semibold mb-1">{t("contact.hoursTitle")}</h5>
+                        <p className="font-body whitespace-pre-line">{t("contact.hours")}</p>
                       </div>
                     </div>
                   </div>
@@ -650,34 +650,34 @@ export default function HomePage() {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-cream text-sm font-heading font-medium mb-2">{t("contact.firstName")}</label>
+                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.firstName")}</label>
                     <input
                       type="text"
                       placeholder="Alexandru"
-                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-open-sans"
+                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
                     />
                   </div>
                   <div>
-                    <label className="block text-cream text-sm font-heading font-medium mb-2">{t("contact.lastName")}</label>
+                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.lastName")}</label>
                     <input
                       type="text"
                       placeholder="Popescu"
-                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-open-sans"
+                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-cream text-sm font-heading font-medium mb-2">{t("contact.email")}</label>
+                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.email")}</label>
                     <input
                       type="email"
                       placeholder="alexandru@example.com"
-                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-open-sans"
+                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
                     />
                   </div>
                   <div>
-                    <label className="block text-cream text-sm font-heading font-medium mb-2">{t("contact.phoneNumber")}</label>
+                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.phoneNumber")}</label>
                     <div className="flex">
                       <div className="flex items-center bg-cream/20 backdrop-blur-sm px-3 py-3 rounded-l-2xl border border-cream/30 border-r-0">
                         <span className="text-xs mr-2">🇷🇴</span>
@@ -686,24 +686,24 @@ export default function HomePage() {
                       <input
                         type="tel"
                         placeholder="+40 721 234 567"
-                        className="flex-1 bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-r-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-open-sans"
+                        className="flex-1 bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-r-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-cream text-sm font-heading font-medium mb-2">{t("contact.message")}</label>
+                  <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.message")}</label>
                   <textarea
                     rows={6}
                     placeholder={t("contact.messagePlaceholder")}
-                    className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent resize-none font-open-sans"
+                    className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent resize-none font-body"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-cream text-terracotta py-4 rounded-2xl font-heading font-bold text-lg hover:bg-cream/90 transition-colors duration-300 uppercase tracking-wider"
+                  className="w-full bg-cream text-terracotta py-4 rounded-2xl font-poppins font-bold text-lg hover:bg-cream/90 transition-colors duration-300 uppercase tracking-wider"
                 >
                   {t("contact.sendMessage")}
                 </button>
@@ -720,15 +720,15 @@ export default function HomePage() {
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <h3 className="text-2xl font-heading font-bold text-brush-orange mb-2">COPT DE FERICIRE®</h3>
+                <h3 className="text-2xl font-poppins font-bold text-brush-orange mb-2">COPT DE FERICIRE®</h3>
                 <div className="flex items-center text-chalk-white mb-4">
                   <span className="text-2xl mr-2">🍽️</span>
-                  <span className="font-open-sans font-medium">{t("footer.tagline")}</span>
+                  <span className="font-body font-medium">{t("footer.tagline")}</span>
                 </div>
               </div>
               
               <div className="mb-6">
-                <p className="text-chalk-white/60 text-sm font-open-sans mb-4">{t("footer.followUs")}</p>
+                <p className="text-chalk-white/60 text-sm font-body mb-4">{t("footer.followUs")}</p>
                 <div className="flex space-x-3">
                   <div className="w-8 h-8 bg-burst-yellow rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
                     <svg className="w-4 h-4 text-chalkboard" fill="currentColor" viewBox="0 0 24 24">
@@ -747,36 +747,36 @@ export default function HomePage() {
 
             {/* Pages Column */}
             <div>
-              <h4 className="text-chalk-white font-heading font-semibold mb-4">{t("footer.pages")}</h4>
+              <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.pages")}</h4>
               <ul className="space-y-2">
-                <li><a href="#about" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("footer.about")}</a></li>
-                <li><a href="#menu" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("footer.menu")}</a></li>
-                <li><a href="#locations" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("footer.locations")}</a></li>
-                <li><a href="#contact" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("footer.contact")}</a></li>
+                <li><a href="#about" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.about")}</a></li>
+                <li><a href="#menu" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.menu")}</a></li>
+                <li><a href="#locations" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.locations")}</a></li>
+                <li><a href="#contact" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.contact")}</a></li>
               </ul>
             </div>
 
             {/* Menu Column */}
             <div>
-              <h4 className="text-chalk-white font-heading font-semibold mb-4">{t("footer.specialties")}</h4>
+              <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.specialties")}</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("products.cheesecake.title")}</a></li>
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("products.meatyPotato.title")}</a></li>
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("products.veganPotato.title")}</a></li>
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-open-sans">{t("menu.items.cozonac")}</a></li>
+                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("products.cheesecake.title")}</a></li>
+                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("products.meatyPotato.title")}</a></li>
+                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("products.veganPotato.title")}</a></li>
+                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("menu.items.cozonac")}</a></li>
               </ul>
             </div>
 
             {/* Newsletter Column */}
             <div>
-              <h4 className="text-chalk-white font-heading font-semibold mb-4">{t("footer.newsletter")}</h4>
+              <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.newsletter")}</h4>
               <div className="flex">
                 <input
                   type="email"
                   placeholder={t("footer.enterEmail")}
-                  className="flex-1 bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-l-2xl border border-chalk-white/30 focus:outline-none focus:border-burst-yellow font-open-sans"
+                  className="flex-1 bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-l-2xl border border-chalk-white/30 focus:outline-none focus:border-burst-yellow font-body"
                 />
-                <button className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-r-2xl font-heading font-semibold transition-colors flex items-center">
+                <button className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-r-2xl font-poppins font-semibold transition-colors flex items-center">
                   {t("footer.subscribe")}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -788,12 +788,12 @@ export default function HomePage() {
 
           {/* Bottom Footer */}
           <div className="border-t border-chalk-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <div className="text-chalk-white/60 text-sm font-open-sans mb-4 md:mb-0">
+            <div className="text-chalk-white/60 text-sm font-body mb-4 md:mb-0">
               © 2024 Copt de Fericire. {t("footer.rights")}
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-chalk-white/60 hover:text-chalk-white text-sm font-open-sans transition-colors">{t("footer.privacyPolicy")}</a>
-              <a href="#" className="text-chalk-white/60 hover:text-chalk-white text-sm font-open-sans transition-colors">{t("footer.terms")}</a>
+              <a href="#" className="text-chalk-white/60 hover:text-chalk-white text-sm font-body transition-colors">{t("footer.privacyPolicy")}</a>
+              <a href="#" className="text-chalk-white/60 hover:text-chalk-white text-sm font-body transition-colors">{t("footer.terms")}</a>
             </div>
           </div>
         </div>
