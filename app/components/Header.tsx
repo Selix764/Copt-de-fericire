@@ -64,7 +64,7 @@ export default function Header() {
             </Link>
             <Link
               href="#contact"
-              className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-lg font-poppins font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-full font-poppins font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {t("contact.reserveTable")}
             </Link>
@@ -103,7 +103,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-lg font-poppins font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
+                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-full font-poppins font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("contact.reserveTable")}

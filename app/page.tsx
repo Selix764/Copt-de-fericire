@@ -140,7 +140,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-transparent border-2 border-chalk-white text-chalk-white hover:bg-chalk-white hover:text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 text-center uppercase tracking-wider"
+                  className="bg-transparent border-2 border-chalk-white text-chalk-white hover:bg-chalk-white hover:text-chalkboard px-8 py-4 rounded-full font-poppins font-bold text-lg transition-all duration-300 text-center uppercase tracking-wider"
                 >
                   {t("contact.reserveTable")}
                 </Link>
