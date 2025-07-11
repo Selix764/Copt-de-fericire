@@ -406,7 +406,7 @@ export default function HomePage() {
           <div className={getAnimationClass(pdfAnimation.isVisible, "scale", 1)}>
             <div className="w-full max-w-7xl mx-auto">
               
-              {/* Desktop PDF Viewer - Keep Original */}
+              {/* Desktop PDF Viewer */}
               <div className="hidden md:block bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
@@ -419,25 +419,10 @@ export default function HomePage() {
                     }}
                   />
                 </div>
-                
-                <div className="text-center mt-6 text-chalk-white/70">
-                  <p className="text-base font-body">
-                    {t("menu.troubleViewing")}
-                    <a 
-                      href="/api/menu-pdf" 
-                      className="text-brush-orange hover:text-deep-orange underline ml-2 transition-colors duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t("menu.openDirectly")}
-                    </a>
-                  </p>
-                </div>
               </div>
 
-              {/* Mobile PDF Viewer - Full Screen Version */}
-              <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-4 shadow-2xl border border-chalk-white/20">
-                {/* Mobile PDF Full Screen */}
+              {/* Mobile PDF Viewer - Same as Desktop but Full Screen Height */}
+              <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
                     src="/api/menu-pdf"
