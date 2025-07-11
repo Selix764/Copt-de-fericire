@@ -421,11 +421,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile PDF Viewer - Full Screen PDF Display */}
+              {/* Mobile PDF Viewer - Enhanced for Mobile Display */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
-                    src="/api/menu-pdf"
+                    src="/api/menu-pdf#toolbar=1&navpanes=0&scrollbar=1&page=1&view=FitH"
                     className="w-full h-full rounded-2xl border-0"
                     title="Restaurant Menu PDF"
                     style={{
@@ -434,6 +434,8 @@ export default function HomePage() {
                     }}
                     allow="fullscreen"
                     loading="eager"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    frameBorder="0"
                   />
                 </div>
               </div>

@@ -43,6 +43,9 @@ export async function GET(request: NextRequest) {
         'Content-Disposition': `inline; filename="${fileMetadata.name || 'menu.pdf'}"`,
         'Cache-Control': 'public, max-age=300', // Cache for 5 minutes
         'Last-Modified': fileMetadata.modifiedTime || new Date().toUTCString(),
+        'X-Frame-Options': 'SAMEORIGIN',
+        'Accept-Ranges': 'bytes',
+        'X-Content-Type-Options': 'nosniff',
       },
     })
     
