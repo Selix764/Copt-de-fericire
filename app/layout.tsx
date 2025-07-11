@@ -1,109 +1,82 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat, Open_Sans, Poppins, Permanent_Marker, Rock_Salt, Bangers } from "next/font/google"
+import { Inter, Montserrat, Poppins, Permanent_Marker, Rock_Salt, Open_Sans, Bangers, Noto_Sans } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "./contexts/LanguageContext"
-import Header from "./components/Header"
+import ClientLayout from "./components/ClientLayout"
 
-// Main Title Font - Tall, clean geometric sans-serif (Romanian support)
-const montserrat = Montserrat({
+const inter = Inter({ subsets: ["latin"] });
+
+// Typography System Fonts
+const montserrat = Montserrat({ 
   subsets: ["latin", "latin-ext"],
-  display: "swap",
-  variable: "--font-montserrat",
-  weight: ["400", "600", "700"],
-  fallback: ['system-ui', 'Arial', 'sans-serif'],
-})
+  variable: '--font-montserrat',
+  weight: ['400', '600', '700'],
+  display: 'swap',
+});
 
-// Body Copy Font - Simple, highly legible sans-serif (Romanian support)
-const openSans = Open_Sans({
+const poppins = Poppins({ 
   subsets: ["latin", "latin-ext"],
-  display: "swap",
-  variable: "--font-open-sans", 
-  weight: ["400", "600"],
-  fallback: ['system-ui', 'Arial', 'sans-serif'],
-})
+  variable: '--font-poppins',
+  weight: ['400', '600', '700'],
+  display: 'swap',
+});
 
-// Sub-title Font - Rounded, friendly sans-serif (Romanian support)
-const poppins = Poppins({
+const permanentMarker = Permanent_Marker({ 
+  subsets: ["latin"],
+  variable: '--font-section-label',
+  weight: '400',
+  display: 'swap',
+});
+
+const rockSalt = Rock_Salt({ 
+  subsets: ["latin"],
+  variable: '--font-banner',
+  weight: '400',
+  display: 'swap',
+});
+
+const openSans = Open_Sans({ 
   subsets: ["latin", "latin-ext"],
-  display: "swap",
-  variable: "--font-poppins",
-  weight: ["400", "600", "700"],
-  fallback: ['system-ui', 'Arial', 'sans-serif'],
-})
+  variable: '--font-body',
+  weight: ['400', '600'],
+  display: 'swap',
+});
 
-// Section Label Font - Playful hand-drawn/display (fallback for Romanian)
-const permanentMarker = Permanent_Marker({
+const bangers = Bangers({ 
   subsets: ["latin"],
-  display: "swap", 
-  variable: "--font-permanent-marker",
-  weight: ["400"],
-  fallback: ['cursive', 'system-ui'],
-})
+  variable: '--font-bangers',
+  weight: '400',
+  display: 'swap',
+});
 
-// Banner Text Font - Brush-stroke script (fallback for Romanian)
-const rockSalt = Rock_Salt({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-rock-salt",
-  weight: ["400"],
-  fallback: ['Georgia', 'serif', 'system-ui'],
-})
-
-// Price Badge Font - Bold, comic/cartoon display (fallback for Romanian)
-const bangers = Bangers({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-bangers",
-  weight: ["400"],
-  fallback: ['Impact', 'Arial Black', 'sans-serif'],
-})
+// Romanian-safe font for special characters
+const notoSans = Noto_Sans({
+  subsets: ["latin", "latin-ext"],
+  variable: '--font-romanian',
+  weight: ['400', '600', '700'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Copt de Fericire - Authentic Romanian Restaurant",
   description: "Experience authentic Romanian culinary traditions in a warm and welcoming atmosphere. Traditional dishes prepared with passion and respect for recipes passed down through generations.",
 }
 
-function ClientLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <LanguageProvider>
-      <Header />
-      {children}
-    </LanguageProvider>
-  )
-}
-
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${poppins.variable} ${permanentMarker.variable} ${rockSalt.variable} ${bangers.variable}`}>
-      <head>
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            /* Improve Romanian character rendering */
-            * {
-              font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-              text-rendering: optimizeLegibility;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-            }
-            
-            /* Ensure proper Romanian character display */
-            body {
-              font-variant-ligatures: common-ligatures;
-              font-kerning: normal;
-            }
-          `
-        }} />
-      </head>
-      <body>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+    <html lang="en">
+      <body className={`${montserrat.variable} ${poppins.variable} ${permanentMarker.variable} ${rockSalt.variable} ${openSans.variable} ${bangers.variable} ${notoSans.variable}`}>
+        <LanguageProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </LanguageProvider>
       </body>
     </html>
-  )
+  );
 }

@@ -49,19 +49,22 @@ export default function HomePage() {
       name: "Maria Popescu",
       rating: 5,
       text: "Cea mai bună mâncare românească din oraș! Sarmalele sunt ca la mama acasă.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face"
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face",
+      isRomanian: true
     },
     {
       name: "Alexandru Ionescu", 
       rating: 5,
       text: "Atmosfera caldă și mâncarea delicioasă. Recomand cu încredere!",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face",
+      isRomanian: true
     },
     {
       name: "Elena Radu",
       rating: 5,
       text: "Papanașii sunt excepționali! Un restaurant autentic românesc.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
+      isRomanian: true
     }
   ]
 
@@ -125,7 +128,7 @@ export default function HomePage() {
             </div>
             
             <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 1)}>
-              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
+              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-romanian">
                 {t("hero.subtitle")}
               </p>
             </div>
@@ -157,7 +160,7 @@ export default function HomePage() {
             <div ref={aboutAnimation.ref} className={getAnimationClass(aboutAnimation.isVisible, "fadeLeft")}>
               <div className="inline-flex items-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-romanian font-bold uppercase tracking-[0.2em]">
                   {t("story.ourStory")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
@@ -165,10 +168,10 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("story.header")}
               </h2>
-              <p className="text-chalk-white/80 text-lg mb-6 leading-relaxed font-body">
+              <p className="text-chalk-white/80 text-lg mb-6 leading-relaxed font-romanian">
                 {t("story.paragraph1")}
               </p>
-              <p className="text-chalk-white/80 text-lg mb-8 leading-relaxed font-body">
+              <p className="text-chalk-white/80 text-lg mb-8 leading-relaxed font-romanian">
                 {t("story.paragraph2")}
               </p>
               
@@ -179,7 +182,7 @@ export default function HomePage() {
                       <Award className="w-8 h-8 text-chalkboard" />
                     </div>
                     <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.awardWinning")}</h3>
-                    <p className="text-chalk-white/60 text-sm font-body">{t("story.awardDesc")}</p>
+                    <p className="text-chalk-white/60 text-sm font-romanian">{t("story.awardDesc")}</p>
                   </div>
                 </div>
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 2)}>
@@ -188,7 +191,7 @@ export default function HomePage() {
                       <ChefHat className="w-8 h-8 text-chalkboard" />
                     </div>
                     <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.expertChefs")}</h3>
-                    <p className="text-chalk-white/60 text-sm font-body">{t("story.expertDesc")}</p>
+                    <p className="text-chalk-white/60 text-sm font-romanian">{t("story.expertDesc")}</p>
                   </div>
                 </div>
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 3)}>
@@ -197,7 +200,7 @@ export default function HomePage() {
                       <Heart className="w-8 h-8 text-chalkboard" />
                     </div>
                     <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.madeWithLove")}</h3>
-                    <p className="text-chalk-white/60 text-sm font-body">{t("story.loveDesc")}</p>
+                    <p className="text-chalk-white/60 text-sm font-romanian">{t("story.loveDesc")}</p>
                   </div>
                 </div>
               </div>
@@ -215,7 +218,7 @@ export default function HomePage() {
                   <div className="absolute -bottom-6 -left-6 bg-burst-yellow text-chalkboard p-6 rounded-2xl shadow-xl transition-transform hover:scale-110">
                     <div className="text-center">
                       <div className="text-3xl font-montserrat font-bold">15+</div>
-                      <div className="text-sm font-body">{t("story.yearsExperience")}</div>
+                      <div className="text-sm font-romanian">{t("story.yearsExperience")}</div>
                     </div>
                   </div>
                 </div>
@@ -300,7 +303,7 @@ export default function HomePage() {
                   <div className="bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-12 border border-chalk-white/20 group-hover:bg-chalk-white/15 group-hover:border-brush-orange/30 transition-all duration-500 shadow-2xl">
                     {/* Category Badge */}
                     <div className="inline-flex items-center bg-brush-orange/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
-                      <span className="text-brush-orange font-section-label text-sm uppercase tracking-wider">
+                      <span className="text-brush-orange font-romanian font-bold text-sm uppercase tracking-wider">
                         Specialitate
                       </span>
                     </div>
@@ -320,19 +323,19 @@ export default function HomePage() {
                     
                     {/* Features */}
                     <div className="flex flex-wrap gap-3 mb-8">
-                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
+                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-romanian backdrop-blur-sm">
                         Preparat proaspăt
                       </span>
                       <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
                         Ingrediente locale
                       </span>
-                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
+                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-romanian backdrop-blur-sm">
                         Rețetă tradițională
                       </span>
                     </div>
                     
                     {/* CTA Button */}
-                    <button className="group/btn bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center">
+                    <button className="group/btn bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-romanian font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center">
                       Comandă acum
                       <svg className="w-5 h-5 ml-3 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -342,7 +345,7 @@ export default function HomePage() {
                   
                   {/* Floating Quote */}
                   <div className="absolute -top-8 -right-8 bg-chalk-white rounded-2xl p-6 shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500 opacity-90 group-hover:opacity-100 max-w-sm">
-                    <p className="text-chalkboard font-body text-sm italic leading-relaxed">
+                    <p className="text-chalkboard font-romanian text-sm italic leading-relaxed">
                       "Cel mai apreciat preparat de clienților noștri"
                     </p>
                     <div className="flex text-brush-orange mt-2">
@@ -385,7 +388,7 @@ export default function HomePage() {
                 {t("menu.subtitle")}
               </h2>
               
-              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-body leading-relaxed">
+              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-romanian leading-relaxed">
                 {t("menu.description")}
               </p>
               
@@ -454,7 +457,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-chalkboard/60 via-transparent to-transparent pointer-events-none"></div>
                   <div className="absolute bottom-4 left-4 right-4 pointer-events-auto">
                     <div className="bg-chalk-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                      <p className="text-chalkboard font-body text-sm text-center mb-3">
+                      <p className="text-chalkboard font-romanian text-sm text-center mb-3">
                         Pentru o experiență mai bună pe mobil
                       </p>
                       <div className="flex gap-2">
@@ -487,23 +490,23 @@ export default function HomePage() {
                 
                 {/* Mobile Menu Highlights */}
                 <div className="space-y-4">
-                  <h4 className="text-chalk-white font-poppins font-bold text-lg text-center">Specializățile noastre</h4>
+                  <h4 className="text-chalk-white font-romanian font-bold text-lg text-center">Specializățile noastre</h4>
                   <div className="grid grid-cols-1 gap-3">
                     <div className="bg-brush-orange/20 rounded-xl p-3 border border-brush-orange/30">
                       <div className="flex justify-between items-center">
-                        <span className="text-chalk-white font-body text-sm">Ciorbă de burtă</span>
+                        <span className="text-chalk-white font-romanian text-sm">Ciorbă de burtă</span>
                         <span className="text-burst-yellow font-bangers text-lg">25 RON</span>
                       </div>
                     </div>
                     <div className="bg-brush-orange/20 rounded-xl p-3 border border-brush-orange/30">
                       <div className="flex justify-between items-center">
-                        <span className="text-chalk-white font-body text-sm">Mici cu muștar</span>
+                        <span className="text-chalk-white font-romanian text-sm">Mici cu muștar</span>
                         <span className="text-burst-yellow font-bangers text-lg">18 RON</span>
                       </div>
                     </div>
                     <div className="bg-brush-orange/20 rounded-xl p-3 border border-brush-orange/30">
                       <div className="flex justify-between items-center">
-                        <span className="text-chalk-white font-body text-sm">Papanași cu smântână</span>
+                        <span className="text-chalk-white font-romanian text-sm">Papanași cu smântână</span>
                         <span className="text-burst-yellow font-bangers text-lg">22 RON</span>
                       </div>
                     </div>
@@ -561,7 +564,7 @@ export default function HomePage() {
               <div className="text-chalk-white">
                 <div className="inline-flex items-center mb-6">
                   <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                  <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
+                  <span className="text-brush-orange text-sm font-romanian font-bold uppercase tracking-[0.2em]">
                     {t("locations.header")}
                   </span>
                   <div className="w-16 h-px bg-brush-orange ml-4"></div>
@@ -606,7 +609,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("social.title")}
               </h2>
-              <p className="text-chalk-white/80 text-xl max-w-3xl mx-auto font-body">
+              <p className="text-chalk-white/80 text-xl max-w-3xl mx-auto font-romanian">
                 {t("social.description")}
               </p>
             </div>
@@ -657,68 +660,69 @@ export default function HomePage() {
           backgroundRepeat: 'no-repeat, no-repeat'
         }}
       >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-charcoal/40"></div>
+        {/* Dark overlay for better readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div ref={contactAnimation.ref} className={getAnimationClass(contactAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-romanian font-bold uppercase tracking-[0.2em]">
                   {t("contact.header")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-white mb-6">
                 {t("contact.header")}
               </h2>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Details */}
             <div className={getAnimationClass(contactAnimation.isVisible, "fadeLeft", 1)}>
-              <div className="relative">
-                {/* Decorative Romanian Element */}
-                <div className="absolute -top-8 -left-8 opacity-80">
-                  <div className="w-24 h-24 bg-gradient-to-br from-terracotta to-terracotta-600 rounded-full flex items-center justify-center">
-                    <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center">
-                      <ChefHat className="w-8 h-8 text-terracotta" />
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                {/* Decorative Header */}
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-brush-orange rounded-full flex items-center justify-center mr-4">
+                    <ChefHat className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-poppins font-bold text-white">{t("contact.restaurantDetails")}</h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="border-l-4 border-brush-orange pl-6">
+                    <h4 className="text-lg font-poppins font-bold text-white mb-2">COPT DE FERICIRE</h4>
+                    <p className="text-white/80 font-romanian italic text-sm">{t("footer.tagline")}</p>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <MapPin className="w-4 h-4 text-brush-orange" />
+                    </div>
+                    <div>
+                      <h5 className="font-poppins font-semibold text-white mb-1 text-sm">{t("contact.addressTitle")}</h5>
+                      <p className="font-romanian text-white/70 text-sm whitespace-pre-line">{t("contact.address")}</p>
                     </div>
                   </div>
-                </div>
-
-                <div className="bg-cream/20 backdrop-blur-sm rounded-2xl p-8 ml-8">
-                  <h3 className="text-2xl font-poppins font-bold text-cream mb-8">{t("contact.restaurantDetails")}</h3>
                   
-                  <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <Phone className="w-4 h-4 text-brush-orange" />
+                    </div>
                     <div>
-                      <h4 className="text-lg font-poppins font-semibold text-cream mb-2">COPT DE FERICIRE</h4>
-                      <p className="text-cream/80 font-body italic">{t("footer.tagline")}</p>
+                      <h5 className="font-poppins font-semibold text-white mb-1 text-sm">{t("contact.phoneTitle")}</h5>
+                      <p className="font-body text-white/70 text-sm">{t("contact.phone")}</p>
                     </div>
-                    
-                    <div className="flex items-start text-cream">
-                      <MapPin className="w-5 h-5 mr-3 mt-1 text-cream/80" />
-                      <div>
-                        <h5 className="font-poppins font-semibold mb-1">{t("contact.addressTitle")}</h5>
-                        <p className="font-body whitespace-pre-line">{t("contact.address")}</p>
-                      </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <Clock className="w-4 h-4 text-brush-orange" />
                     </div>
-                    
-                    <div className="flex items-start text-cream">
-                      <Phone className="w-5 h-5 mr-3 mt-1 text-cream/80" />
-                      <div>
-                        <h5 className="font-poppins font-semibold mb-1">{t("contact.phoneTitle")}</h5>
-                        <p className="font-body">{t("contact.phone")}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start text-cream">
-                      <Clock className="w-5 h-5 mr-3 mt-1 text-cream/80" />
-                      <div>
-                        <h5 className="font-poppins font-semibold mb-1">{t("contact.hoursTitle")}</h5>
-                        <p className="font-body whitespace-pre-line">{t("contact.hours")}</p>
-                      </div>
+                    <div>
+                      <h5 className="font-poppins font-semibold text-white mb-1 text-sm">{t("contact.hoursTitle")}</h5>
+                      <p className="font-romanian text-white/70 text-sm whitespace-pre-line">{t("contact.hours")}</p>
                     </div>
                   </div>
                 </div>
@@ -727,67 +731,67 @@ export default function HomePage() {
 
             {/* Contact Form */}
             <div className={getAnimationClass(contactAnimation.isVisible, "fadeRight", 1)}>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.firstName")}</label>
+                    <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.firstName")}</label>
                     <input
                       type="text"
                       placeholder="Alexandru"
-                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
+                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
                     />
                   </div>
                   <div>
-                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.lastName")}</label>
+                    <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.lastName")}</label>
                     <input
                       type="text"
                       placeholder="Popescu"
-                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
+                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.email")}</label>
+                    <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.email")}</label>
                     <input
                       type="email"
                       placeholder="alexandru@example.com"
-                      className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
+                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
                     />
                   </div>
                   <div>
-                    <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.phoneNumber")}</label>
+                    <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.phoneNumber")}</label>
                     <div className="flex">
-                      <div className="flex items-center bg-cream/20 backdrop-blur-sm px-3 py-3 rounded-l-2xl border border-cream/30 border-r-0">
+                      <div className="flex items-center bg-black/30 backdrop-blur-sm px-3 py-3 rounded-l-xl border border-white/20 border-r-0">
                         <span className="text-xs mr-2">🇷🇴</span>
-                        <span className="text-cream text-sm">▼</span>
+                        <span className="text-white text-sm">▼</span>
                       </div>
                       <input
                         type="tel"
                         placeholder="+40 721 234 567"
-                        className="flex-1 bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-r-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent font-body"
+                        className="flex-1 bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-r-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-cream text-sm font-poppins font-medium mb-2">{t("contact.message")}</label>
+                  <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.message")}</label>
                   <textarea
                     rows={6}
                     placeholder={t("contact.messagePlaceholder")}
-                    className="w-full bg-cream/20 backdrop-blur-sm text-cream placeholder-cream/60 px-4 py-3 rounded-2xl border border-cream/30 focus:outline-none focus:ring-2 focus:ring-cream focus:border-transparent resize-none font-body"
+                    className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent resize-none font-body"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-cream text-terracotta py-4 rounded-2xl font-poppins font-bold text-lg hover:bg-cream/90 transition-colors duration-300 uppercase tracking-wider"
+                  className="w-full bg-orange-200 hover:bg-orange-300 text-orange-800 py-4 rounded-xl font-poppins font-bold text-lg transition-all duration-300 uppercase tracking-wider shadow-lg"
                 >
                   {t("contact.sendMessage")}
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
