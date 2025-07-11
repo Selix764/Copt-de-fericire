@@ -11,7 +11,7 @@ export default function Header() {
   const { t } = useLanguage()
 
   const navigation = [
-    { name: t("story.header"), href: "#story" },
+    { name: t("story.header"), href: "#about" },
     { name: t("menu.header"), href: "#menu" },
     { name: t("contact.header"), href: "#contact" },
   ]
