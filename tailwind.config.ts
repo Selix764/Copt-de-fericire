@@ -17,6 +17,16 @@ const config: Config = {
         'terracotta-600': '#B85A47',
         warmGray: '#E8E1D8',
         
+        // New Chalkboard Design Palette
+        'chalkboard': '#1E1E1E',
+        'chalk-white': '#FFFFFF',
+        'brush-orange': '#F2994A',
+        'deep-orange': '#D97E2F',
+        'gold-accent': '#FFC107',
+        'burst-yellow': '#FFEB3B',
+        'strawberry-red': '#E53935',
+        'leaf-green': '#66BB6A',
+        
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

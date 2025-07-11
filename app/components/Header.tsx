@@ -28,27 +28,25 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-warmGray" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-transparent"
     >
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link
             href="/"
-            className="text-charcoal font-heading font-bold text-xl lg:text-2xl hover:text-terracotta transition-colors duration-300 tracking-wider"
+            className="text-chalk-white font-heading font-bold text-xl lg:text-2xl hover:text-burst-yellow transition-colors duration-300 tracking-wider drop-shadow-lg"
           >
             COPT DE FERICIRE
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-charcoal hover:text-terracotta transition-colors duration-300 font-open-sans font-medium text-base uppercase tracking-wider"
+                className="bg-burst-yellow/20 hover:bg-burst-yellow text-chalk-white hover:text-chalkboard px-6 py-3 rounded-xl font-open-sans font-medium text-base uppercase tracking-wider drop-shadow-md transition-all duration-300 backdrop-blur-sm border border-chalk-white/20 hover:border-burst-yellow"
               >
                 {item.name}
               </Link>
@@ -59,14 +57,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="tel:+40721234567"
-              className="flex items-center text-charcoal hover:text-terracotta transition-colors duration-300 font-medium"
+              className="flex items-center text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-medium drop-shadow-md"
             >
               <Phone className="w-4 h-4 mr-2" />
               <span className="text-sm font-open-sans">{t("contact.phone")}</span>
             </Link>
             <Link
               href="#contact"
-              className="bg-terracotta hover:bg-terracotta-600 text-cream px-6 py-3 rounded-lg font-heading font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-lg font-heading font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {t("contact.reserveTable")}
             </Link>
@@ -74,7 +72,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden text-charcoal p-2 rounded-lg hover:bg-warmGray hover:text-terracotta transition-colors duration-300"
+            className="lg:hidden text-chalk-white p-2 rounded-lg hover:bg-chalk-white/10 hover:text-burst-yellow transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -83,29 +81,29 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-cream/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl border border-warmGray">
+          <div className="lg:hidden bg-chalkboard/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl border border-chalk-white/20">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-charcoal hover:text-terracotta transition-colors duration-300 font-open-sans font-medium px-6 py-2 text-center uppercase tracking-wider"
+                  className="text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-open-sans font-medium px-6 py-2 text-center uppercase tracking-wider"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-warmGray">
+              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-chalk-white/20">
                 <Link
                   href="tel:+40721234567"
-                  className="flex items-center justify-center text-charcoal hover:text-terracotta transition-colors duration-300 font-medium py-2"
+                  className="flex items-center justify-center text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-medium py-2"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   <span className="font-open-sans">{t("contact.phone")}</span>
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-terracotta hover:bg-terracotta-600 text-cream py-3 px-6 rounded-lg font-heading font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
+                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-lg font-heading font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("contact.reserveTable")}
