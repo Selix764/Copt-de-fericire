@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-chalk-white font-heading font-bold text-xl lg:text-2xl hover:text-burst-yellow transition-colors duration-300 tracking-wider drop-shadow-lg"
+            className="text-chalk-white font-poppins font-bold text-xl lg:text-2xl hover:text-burst-yellow transition-colors duration-300 tracking-wider drop-shadow-lg"
           >
             COPT DE FERICIRE
           </Link>
@@ -46,7 +46,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="bg-burst-yellow/20 hover:bg-burst-yellow text-chalk-white hover:text-chalkboard px-6 py-3 rounded-xl font-open-sans font-medium text-base uppercase tracking-wider drop-shadow-md transition-all duration-300 backdrop-blur-sm border border-chalk-white/20 hover:border-burst-yellow"
+                className="bg-burst-yellow/20 hover:bg-burst-yellow text-chalk-white hover:text-chalkboard px-6 py-3 rounded-xl font-body font-medium text-base uppercase tracking-wider drop-shadow-md transition-all duration-300 backdrop-blur-sm border border-chalk-white/20 hover:border-burst-yellow"
               >
                 {item.name}
               </Link>
@@ -60,11 +60,11 @@ export default function Header() {
               className="flex items-center text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-medium drop-shadow-md"
             >
               <Phone className="w-4 h-4 mr-2" />
-              <span className="text-sm font-open-sans">{t("contact.phone")}</span>
+              <span className="text-sm font-body">{t("contact.phone")}</span>
             </Link>
             <Link
               href="#contact"
-              className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-lg font-heading font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-lg font-poppins font-semibold text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {t("contact.reserveTable")}
             </Link>
@@ -87,7 +87,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-open-sans font-medium px-6 py-2 text-center uppercase tracking-wider"
+                  className="text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-body font-medium px-6 py-2 text-center uppercase tracking-wider"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -99,11 +99,11 @@ export default function Header() {
                   className="flex items-center justify-center text-chalk-white hover:text-burst-yellow transition-colors duration-300 font-medium py-2"
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  <span className="font-open-sans">{t("contact.phone")}</span>
+                  <span className="font-body">{t("contact.phone")}</span>
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-lg font-heading font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
+                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-lg font-poppins font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("contact.reserveTable")}

@@ -69,8 +69,29 @@ const config: Config = {
         }
       },
       fontFamily: {
-        'heading': ['var(--font-montserrat)', 'serif'],
+        // Main Title Font - Tall, clean geometric sans-serif
+        'heading': ['var(--font-montserrat)', 'sans-serif'],
+        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
+        
+        // Body Copy Font - Simple, highly legible sans-serif  
         'open-sans': ['var(--font-open-sans)', 'sans-serif'],
+        'body': ['var(--font-open-sans)', 'sans-serif'],
+        
+        // Sub-title Font - Rounded, friendly sans-serif
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'subtitle': ['var(--font-poppins)', 'sans-serif'],
+        
+        // Section Label Font - Playful hand-drawn/display
+        'permanent-marker': ['var(--font-permanent-marker)', 'cursive'],
+        'section-label': ['var(--font-permanent-marker)', 'cursive'],
+        
+        // Banner Text Font - Brush-stroke script
+        'rock-salt': ['var(--font-rock-salt)', 'cursive'],
+        'banner': ['var(--font-rock-salt)', 'cursive'],
+        
+        // Price Badge Font - Bold, comic/cartoon display
+        'bangers': ['var(--font-bangers)', 'cursive'],
+        'price': ['var(--font-bangers)', 'cursive'],
       },
       borderRadius: {
         lg: 'var(--radius)',

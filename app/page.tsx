@@ -95,7 +95,7 @@ export default function HomePage() {
       <div className="fixed top-4 right-4 z-50">
         <button
           onClick={toggleLanguage}
-          className="bg-burst-yellow text-chalkboard px-4 py-2 rounded-2xl font-heading font-bold text-sm uppercase tracking-wider shadow-lg hover:bg-gold-accent transition-colors duration-300"
+          className="bg-burst-yellow text-chalkboard px-4 py-2 rounded-2xl font-poppins font-bold text-sm uppercase tracking-wider shadow-lg hover:bg-gold-accent transition-colors duration-300"
         >
           {language === 'en' ? 'RO' : 'EN'}
         </button>
@@ -118,14 +118,14 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl">
             <div ref={heroAnimation.ref} className={getAnimationClass(heroAnimation.isVisible, "fadeUp")}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-chalk-white mb-6 leading-tight tracking-wider">
-                COPT DE FERICIRE
-                <span className="block text-brush-orange">{t("hero.restaurant")}</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-6 leading-tight tracking-wider">
+                <span className="font-poppins font-semibold text-brush-orange">{t("hero.restaurant")}</span>
+                <span className="block font-poppins font-semibold">COPT DE FERICIRE</span>
               </h1>
             </div>
             
             <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 1)}>
-              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-open-sans">
+              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
                 {t("hero.subtitle")}
               </p>
             </div>
@@ -134,13 +134,13 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   href="#menu"
-                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-heading font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
+                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
                 >
                   {t("menu.viewFullMenu")}
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-transparent border-2 border-chalk-white text-chalk-white hover:bg-chalk-white hover:text-chalkboard px-8 py-4 rounded-2xl font-heading font-bold text-lg transition-all duration-300 text-center uppercase tracking-wider"
+                  className="bg-transparent border-2 border-chalk-white text-chalk-white hover:bg-chalk-white hover:text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 text-center uppercase tracking-wider"
                 >
                   {t("contact.reserveTable")}
                 </Link>
@@ -157,18 +157,18 @@ export default function HomePage() {
             <div ref={aboutAnimation.ref} className={getAnimationClass(aboutAnimation.isVisible, "fadeLeft")}>
               <div className="inline-flex items-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-heading font-semibold uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
                   {t("story.ourStory")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-chalk-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("story.header")}
               </h2>
-              <p className="text-chalk-white/80 text-lg mb-6 leading-relaxed font-open-sans">
+              <p className="text-chalk-white/80 text-lg mb-6 leading-relaxed font-body">
                 {t("story.paragraph1")}
               </p>
-              <p className="text-chalk-white/80 text-lg mb-8 leading-relaxed font-open-sans">
+              <p className="text-chalk-white/80 text-lg mb-8 leading-relaxed font-body">
                 {t("story.paragraph2")}
               </p>
               
@@ -178,8 +178,8 @@ export default function HomePage() {
                     <div className="bg-burst-yellow rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
                       <Award className="w-8 h-8 text-chalkboard" />
                     </div>
-                    <h3 className="text-chalk-white font-heading font-bold text-lg">{t("story.awardWinning")}</h3>
-                    <p className="text-chalk-white/60 text-sm font-open-sans">{t("story.awardDesc")}</p>
+                    <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.awardWinning")}</h3>
+                    <p className="text-chalk-white/60 text-sm font-body">{t("story.awardDesc")}</p>
                   </div>
                 </div>
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 2)}>
@@ -187,8 +187,8 @@ export default function HomePage() {
                     <div className="bg-burst-yellow rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
                       <ChefHat className="w-8 h-8 text-chalkboard" />
                     </div>
-                    <h3 className="text-chalk-white font-heading font-bold text-lg">{t("story.expertChefs")}</h3>
-                    <p className="text-chalk-white/60 text-sm font-open-sans">{t("story.expertDesc")}</p>
+                    <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.expertChefs")}</h3>
+                    <p className="text-chalk-white/60 text-sm font-body">{t("story.expertDesc")}</p>
                   </div>
                 </div>
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 3)}>
@@ -196,8 +196,8 @@ export default function HomePage() {
                     <div className="bg-burst-yellow rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
                       <Heart className="w-8 h-8 text-chalkboard" />
                     </div>
-                    <h3 className="text-chalk-white font-heading font-bold text-lg">{t("story.madeWithLove")}</h3>
-                    <p className="text-chalk-white/60 text-sm font-open-sans">{t("story.loveDesc")}</p>
+                    <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.madeWithLove")}</h3>
+                    <p className="text-chalk-white/60 text-sm font-body">{t("story.loveDesc")}</p>
                   </div>
                 </div>
               </div>
@@ -240,17 +240,17 @@ export default function HomePage() {
             <div className="text-center mb-20">
               <div className="inline-flex items-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-heading font-bold uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
                   {t("products.header")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-chalk-white mb-8 leading-tight">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
                 {t("products.title")}
               </h2>
               
-              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-open-sans leading-relaxed">
+              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-body leading-relaxed">
                 {t("products.subtitle")}
               </p>
               
@@ -300,13 +300,13 @@ export default function HomePage() {
                   <div className="bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-12 border border-chalk-white/20 group-hover:bg-chalk-white/15 group-hover:border-brush-orange/30 transition-all duration-500 shadow-2xl">
                     {/* Category Badge */}
                     <div className="inline-flex items-center bg-brush-orange/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
-                      <span className="text-brush-orange font-heading font-semibold text-sm uppercase tracking-wider">
+                      <span className="text-brush-orange font-section-label text-sm uppercase tracking-wider">
                         Specialitate
                       </span>
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-4xl md:text-5xl font-heading font-bold text-chalk-white mb-6 group-hover:text-brush-orange transition-colors duration-500">
+                    <h3 className="text-4xl md:text-5xl font-banner text-chalk-white mb-6 group-hover:text-brush-orange transition-colors duration-500">
                       {product.title}
                     </h3>
                     
@@ -314,25 +314,25 @@ export default function HomePage() {
                     <div className="w-24 h-1 bg-gradient-to-r from-brush-orange to-deep-orange rounded-full mb-8 group-hover:w-32 transition-all duration-500"></div>
                     
                     {/* Description */}
-                    <p className="text-chalk-white/80 text-lg font-open-sans leading-relaxed mb-8 group-hover:text-chalk-white/95 transition-colors duration-300">
+                    <p className="text-chalk-white/80 text-lg font-body leading-relaxed mb-8 group-hover:text-chalk-white/95 transition-colors duration-300">
                       {product.description}
                     </p>
                     
                     {/* Features */}
                     <div className="flex flex-wrap gap-3 mb-8">
-                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-open-sans backdrop-blur-sm">
+                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
                         Preparat proaspăt
                       </span>
-                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-open-sans backdrop-blur-sm">
+                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
                         Ingrediente locale
                       </span>
-                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-open-sans backdrop-blur-sm">
+                      <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
                         Rețetă tradițională
                       </span>
                     </div>
                     
                     {/* CTA Button */}
-                    <button className="group/btn bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-heading font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center">
+                    <button className="group/btn bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center">
                       Comandă acum
                       <svg className="w-5 h-5 ml-3 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -342,8 +342,8 @@ export default function HomePage() {
                   
                   {/* Floating Quote */}
                   <div className="absolute -top-8 -right-8 bg-chalk-white rounded-2xl p-6 shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500 opacity-90 group-hover:opacity-100 max-w-sm">
-                    <p className="text-chalkboard font-open-sans text-sm italic leading-relaxed">
-                      "Cel mai apreciat preparat de clienții noștri"
+                    <p className="text-chalkboard font-body text-sm italic leading-relaxed">
+                      "Cel mai apreciat preparat de clienților noștri"
                     </p>
                     <div className="flex text-brush-orange mt-2">
                       {[...Array(5)].map((_, i) => (
@@ -375,17 +375,17 @@ export default function HomePage() {
             <div className="text-center mb-20">
               <div className="inline-flex items-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-heading font-bold uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
                   {t("menu.header")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-chalk-white mb-8 leading-tight">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
                 {t("menu.subtitle")}
               </h2>
               
-              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-open-sans leading-relaxed">
+              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-body leading-relaxed">
                 {t("menu.description")}
               </p>
               
@@ -481,16 +481,16 @@ export default function HomePage() {
               <div className="text-chalk-white">
                 <div className="inline-flex items-center mb-6">
                   <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                  <span className="text-brush-orange text-sm font-heading font-semibold uppercase tracking-[0.2em]">
+                  <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
                     {t("locations.header")}
                   </span>
                   <div className="w-16 h-px bg-brush-orange ml-4"></div>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-8 leading-tight">
                   {t("locations.subtitle")}
                 </h2>
                 
-                <button className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-3 rounded-2xl font-heading font-bold text-sm uppercase tracking-wide transition-all duration-300 mb-12 flex items-center">
+                <button className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-3 rounded-2xl font-poppins font-bold text-sm uppercase tracking-wide transition-all duration-300 mb-12 flex items-center">
                   {t("locations.getDirections")}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -500,8 +500,8 @@ export default function HomePage() {
                 <div className="space-y-8">
                   {locations.map((location, index) => (
                     <div key={index} className={getAnimationClass(locationsAnimation.isVisible, "fadeUp", index + 1)}>
-                      <h3 className="text-xl font-heading font-bold text-chalk-white mb-2">{location.name}</h3>
-                      <p className="text-chalk-white/70 font-open-sans">{location.address}</p>
+                      <h3 className="text-xl font-poppins font-bold text-chalk-white mb-2">{location.name}</h3>
+                      <p className="text-chalk-white/70 font-body">{location.address}</p>
                     </div>
                   ))}
                 </div>
@@ -518,15 +518,15 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
-                <span className="text-brush-orange text-sm font-heading font-semibold uppercase tracking-[0.2em]">
+                <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
                   {t("social.header")}
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-chalk-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("social.title")}
               </h2>
-              <p className="text-chalk-white/80 text-xl max-w-3xl mx-auto font-open-sans">
+              <p className="text-chalk-white/80 text-xl max-w-3xl mx-auto font-body">
                 {t("social.description")}
               </p>
             </div>
