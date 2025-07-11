@@ -421,17 +421,19 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile PDF Viewer - Same as Desktop but Full Screen Height */}
+              {/* Mobile PDF Viewer - Full Screen PDF Display */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
                     src="/api/menu-pdf"
-                    className="w-full h-full rounded-2xl"
+                    className="w-full h-full rounded-2xl border-0"
                     title="Restaurant Menu PDF"
                     style={{
                       minHeight: '100vh',
                       background: '#FFFFFF'
                     }}
+                    allow="fullscreen"
+                    loading="eager"
                   />
                 </div>
               </div>
