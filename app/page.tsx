@@ -435,96 +435,19 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile PDF Viewer - New Optimized Version */}
+              {/* Mobile PDF Viewer - Full Screen Version */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-4 shadow-2xl border border-chalk-white/20">
-                {/* Mobile PDF Preview */}
-                <div className="w-full h-[300px] rounded-2xl overflow-hidden bg-chalk-white mb-4 relative">
+                {/* Mobile PDF Full Screen */}
+                <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
                     src="/api/menu-pdf"
                     className="w-full h-full rounded-2xl"
                     title="Restaurant Menu PDF"
                     style={{
-                      minHeight: '300px',
-                      background: '#FFFFFF',
-                      transform: 'scale(0.7)',
-                      transformOrigin: 'top left',
-                      width: '142.86%',
-                      height: '142.86%'
+                      minHeight: '100vh',
+                      background: '#FFFFFF'
                     }}
                   />
-                  
-                  {/* Mobile Overlay with Actions */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-chalkboard/60 via-transparent to-transparent pointer-events-none"></div>
-                  <div className="absolute bottom-4 left-4 right-4 pointer-events-auto">
-                    <div className="bg-chalk-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                      <p className="text-chalkboard font-romanian text-sm text-center mb-3">
-                        Pentru o experiență mai bună pe mobil
-                      </p>
-                      <div className="flex gap-2">
-                        <a 
-                          href="/api/menu-pdf" 
-                          className="flex-1 bg-burst-yellow hover:bg-gold-accent text-chalkboard px-4 py-3 rounded-xl font-poppins font-bold text-sm text-center transition-all duration-300 flex items-center justify-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          {t("menu.downloadMenu")}
-                        </a>
-                        <a 
-                          href="/api/menu-pdf" 
-                          className="flex-1 bg-brush-orange hover:bg-deep-orange text-chalk-white px-4 py-3 rounded-xl font-poppins font-bold text-sm text-center transition-all duration-300 flex items-center justify-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                          Deschide
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Mobile Menu Highlights */}
-                <div className="space-y-4">
-                  <h4 className="text-chalk-white font-romanian font-bold text-lg text-center">Specializățile noastre</h4>
-                  <div className="grid grid-cols-1 gap-3">
-                    <div className="bg-brush-orange/20 rounded-xl p-3 border border-brush-orange/30">
-                      <div className="flex justify-between items-center">
-                        <span className="text-chalk-white font-romanian text-sm">Ciorbă de burtă</span>
-                        <span className="text-burst-yellow font-bangers text-lg">25 RON</span>
-                      </div>
-                    </div>
-                    <div className="bg-brush-orange/20 rounded-xl p-3 border border-brush-orange/30">
-                      <div className="flex justify-between items-center">
-                        <span className="text-chalk-white font-romanian text-sm">Mici cu muștar</span>
-                        <span className="text-burst-yellow font-bangers text-lg">18 RON</span>
-                      </div>
-                    </div>
-                    <div className="bg-brush-orange/20 rounded-xl p-3 border border-brush-orange/30">
-                      <div className="flex justify-between items-center">
-                        <span className="text-chalk-white font-romanian text-sm">Papanași cu smântână</span>
-                        <span className="text-burst-yellow font-bangers text-lg">22 RON</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center mt-4">
-                    <p className="text-chalk-white/70 font-body text-xs">
-                      {t("menu.troubleViewing")} 
-                      <a 
-                        href="/api/menu-pdf" 
-                        className="text-brush-orange hover:text-deep-orange underline ml-1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {t("menu.openDirectly")}
-                      </a>
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
