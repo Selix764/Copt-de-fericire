@@ -78,14 +78,14 @@ const translations = {
     
     // Products Section
     "products.header": "Produsele Noastre",
-    "products.title": "Alegeri Delicioase, Făcute Special pentru Tine",
-    "products.subtitle": "Explorează meniul nostru atent selectat cu ingrediente proaspete și arome îndrăznețe.",
-    "products.traditional.title": "Preparate Tradiționale",
-    "products.traditional.description": "Specialități de încercat, create cu arome autentice și ingrediente premium.",
-    "products.grill.title": "Grătar & Mici",
-    "products.grill.description": "Perfecțiune suculentă, gătită pe flacără pentru a scoate aromele bogate.",
-    "products.desserts.title": "Deserturi & Dulciuri",
-    "products.desserts.description": "Rapide, gustoase și pline de ingrediente proaspete pentru satisfacție supremă.",
+    "products.title": "Cele Mai Populare Preparate",
+    "products.subtitle": "Descoperă cele mai îndrăgite preparate ale clienților noștri, gătite cu ingrediente proaspete și dragoste.",
+    "products.cheesecake.title": "Cheesecake de Casă",
+    "products.cheesecake.description": "Desertul nostru emblematic - un cheesecake cremos și delicios care îți va cuceri inima la prima degustare.",
+    "products.meatyPotato.title": "Cartof Copt cu Pui",
+    "products.meatyPotato.description": "Pentru iubitorii de carne - cartof copt pufos cu bucăți suculente de pui și sos aromat, perfect pentru o masă consistentă.",
+    "products.veganPotato.title": "Cartof Copt cu Tofu",
+    "products.veganPotato.description": "Opțiunea noastră vegană delicioasă - cartof copt cu tofu aromat și legume proaspete, plin de savoare și nutrienți.",
     
     // Locations Section
     "locations.header": "Locațiile Noastre",
@@ -205,14 +205,14 @@ const translations = {
     
     // Products Section
     "products.header": "Our Products",
-    "products.title": "Delicious Choices, Made Especially for You",
-    "products.subtitle": "Explore our carefully selected menu with fresh ingredients and bold flavors.",
-    "products.traditional.title": "Traditional Dishes",
-    "products.traditional.description": "Try our specialties, created with authentic flavors and premium ingredients.",
-    "products.grill.title": "Grill & Mici",
-    "products.grill.description": "Perfectly juicy, grilled to bring out rich flavors.",
-    "products.desserts.title": "Desserts & Sweets",
-    "products.desserts.description": "Quick, delicious, and full of fresh ingredients for supreme satisfaction.",
+    "products.title": "Most Popular Dishes",
+    "products.subtitle": "Discover our customers' favorite dishes, made with fresh ingredients and love.",
+    "products.cheesecake.title": "Homemade Cheesecake",
+    "products.cheesecake.description": "Our signature dessert - a creamy and delicious cheesecake that will win your heart at first taste.",
+    "products.meatyPotato.title": "Baked Potato with Chicken",
+    "products.meatyPotato.description": "For meat lovers - fluffy baked potato with succulent chicken pieces and flavorful sauce, perfect for a hearty meal.",
+    "products.veganPotato.title": "Baked Potato with Tofu",
+    "products.veganPotato.description": "Our delicious vegan option - baked potato with seasoned tofu and fresh vegetables, full of flavor and nutrients.",
     
     // Locations Section
     "locations.header": "Our Locations",

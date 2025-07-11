@@ -1,8 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { Star, Clock, MapPin, Phone, Mail, ChefHat, Users, Award, Heart, Facebook, Instagram, Twitter, ChevronLeft, ChevronRight } from "lucide-react"
+import { Star, Clock, MapPin, Phone, Mail, ChefHat, Users, Award, Heart, Facebook, Instagram, Twitter } from "lucide-react"
 import { useScrollAnimation, getAnimationClass } from "./hooks/useScrollAnimation"
 import { useLanguage } from "./contexts/LanguageContext"
 
@@ -18,118 +17,32 @@ export default function HomePage() {
   const socialAnimation = useScrollAnimation(0.1)
   const contactAnimation = useScrollAnimation(0.1)
 
-  // Products slider state
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoSliding, setIsAutoSliding] = useState(true)
-
-  // Products data
+  // Most Popular Menu Items
   const products = [
     {
-      id: 'traditional',
-      title: t("products.traditional.title"),
-      description: t("products.traditional.description"),
-      image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=1000",
-      alt: "Traditional Romanian Dishes"
+      id: 'cheesecake',
+      title: t("products.cheesecake.title"),
+      description: t("products.cheesecake.description"),
+      image: "/images/cheesecake-popular.jpg",
+      alt: "Homemade Cheesecake"
     },
     {
-      id: 'grill',
-      title: t("products.grill.title"),
-      description: t("products.grill.description"),
-      image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1000",
-      alt: "Grilled Romanian Mici"
+      id: 'meatyPotato',
+      title: t("products.meatyPotato.title"),
+      description: t("products.meatyPotato.description"),
+      image: "/images/baked-potato-chicken-popular.jpg",
+      alt: "Baked Potato with Chicken"
     },
     {
-      id: 'desserts',
-      title: t("products.desserts.title"),
-      description: t("products.desserts.description"),
-      image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1000",
-      alt: "Romanian Desserts"
+      id: 'veganPotato',
+      title: t("products.veganPotato.title"),
+      description: t("products.veganPotato.description"),
+      image: "/images/baked-potato-tofu-popular.jpg",
+      alt: "Baked Potato with Tofu"
     }
   ]
 
-  // Auto-slide functionality
-  useEffect(() => {
-    if (!isAutoSliding) return
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % products.length)
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [isAutoSliding, products.length])
-
-  // Navigation functions
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % products.length)
-    setIsAutoSliding(false)
-    setTimeout(() => setIsAutoSliding(true), 8000)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + products.length) % products.length)
-    setIsAutoSliding(false)
-    setTimeout(() => setIsAutoSliding(true), 8000)
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-    setIsAutoSliding(false)
-    setTimeout(() => setIsAutoSliding(true), 8000)
-  }
-
-  // Menu data from the Romanian restaurant
-  const menuCategories = [
-    {
-      title: t("menu.appetizers"),
-      items: [
-        {
-          name: t("menu.items.salataBoef"),
-          description: t("menu.descriptions.salataBoef"),
-          price: "25"
-        },
-        {
-          name: t("menu.items.papanasi"),
-          description: t("menu.descriptions.papanasi"),
-          price: "18"
-        },
-        {
-          name: t("menu.items.mici"),
-          description: t("menu.descriptions.mici"),
-          price: "22"
-        },
-        {
-          name: t("menu.items.sarmale"),
-          description: t("menu.descriptions.sarmale"),
-          price: "28"
-        }
-      ]
-    },
-    {
-      title: t("menu.mainCourses"),
-      items: [
-        {
-          name: t("menu.items.schnitzel"),
-          description: t("menu.descriptions.schnitzel"),
-          price: "35"
-        },
-        {
-          name: t("menu.items.gulas"),
-          description: t("menu.descriptions.gulas"),
-          price: "32"
-        },
-        {
-          name: t("menu.items.papricash"),
-          description: t("menu.descriptions.papricash"),
-          price: "30"
-        },
-        {
-          name: t("menu.items.tochitura"),
-          description: t("menu.descriptions.tochitura"),
-          price: "38"
-        }
-      ]
-    }
-  ]
+  // No menu categories - removed desserts section
 
   const testimonials = [
     {
@@ -306,134 +219,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Products Section - Slider */}
+      {/* Most Popular Dishes Section - Enhanced Carousel */}
       <section 
         className="py-20 bg-charcoal relative overflow-hidden"
-        onMouseEnter={() => setIsAutoSliding(false)}
-        onMouseLeave={() => setIsAutoSliding(true)}
       >
-        <div className="container mx-auto px-4 lg:px-8">
+        {/* Premium Background Effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-charcoal/90"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-terracotta/5 opacity-30"></div>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div ref={productsAnimation.ref} className={getAnimationClass(productsAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-16">
-              <p className="text-terracotta text-sm font-heading font-semibold mb-4 uppercase tracking-wider">{t("products.header")}</p>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-cream mb-6 leading-tight">
+              <p className="text-terracotta text-sm font-heading font-semibold mb-4 uppercase tracking-wider animate-fade-in-up">{t("products.header")}</p>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-cream mb-6 leading-tight animate-fade-in-up animation-delay-300">
                 {t("products.title")}
               </h2>
-              <p className="text-cream/80 text-xl max-w-3xl mx-auto font-open-sans">
+              <p className="text-cream/80 text-xl max-w-3xl mx-auto font-open-sans animate-fade-in-up animation-delay-500">
                 {t("products.subtitle")}
               </p>
-            </div>
-          </div>
-
-          {/* Slider Container */}
-          <div className="relative max-w-6xl mx-auto">
-            {/* Slides */}
-            <div className="relative h-[600px] rounded-2xl overflow-hidden">
-              <div
-                className="flex transition-transform duration-700 ease-in-out h-full"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {products.map((product, index) => (
-                  <div
-                    key={product.id}
-                    className="w-full flex-shrink-0 relative group"
-                  >
-                    {/* Background Image */}
-                    <img
-                      src={product.image}
-                      alt={product.alt}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
-                    
-                    {/* Content */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center max-w-4xl px-8">
-                        <div className={getAnimationClass(productsAnimation.isVisible, "fadeUp", index + 1)}>
-                          <h3 className="text-4xl md:text-6xl font-heading font-bold text-cream mb-6 leading-tight">
-                            {product.title}
-                          </h3>
-                          <p className="text-cream/90 text-xl md:text-2xl font-open-sans leading-relaxed max-w-2xl mx-auto">
-                            {product.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Decorative element */}
-                    <div className="absolute top-8 right-8">
-                      <div className="bg-terracotta/20 backdrop-blur-sm text-cream w-16 h-16 rounded-full flex items-center justify-center border-2 border-terracotta">
-                        <span className="text-2xl font-heading font-bold">{index + 1}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              {/* Decorative Food Icon */}
+              <div className="flex justify-center mt-8 animate-fade-in-up animation-delay-800">
+                <div className="flex space-x-2">
+                  <div className="w-2 h-2 bg-terracotta rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-terracotta/70 rounded-full animate-pulse animation-delay-300"></div>
+                  <div className="w-2 h-2 bg-terracotta/50 rounded-full animate-pulse animation-delay-600"></div>
+                </div>
               </div>
             </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-terracotta/90 hover:bg-terracotta text-cream w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg z-10"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-terracotta/90 hover:bg-terracotta text-cream w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg z-10"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Slide Indicators */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
-              {products.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                    index === currentSlide
-                      ? 'bg-terracotta scale-125'
-                      : 'bg-cream/50 hover:bg-cream/80'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Progress Bar */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-cream/20">
-              <div
-                className="h-full bg-terracotta transition-all duration-300"
-                style={{ width: `${((currentSlide + 1) / products.length) * 100}%` }}
-              />
-            </div>
           </div>
 
-          {/* Additional Info Cards */}
+          {/* Removed large carousel window - keeping only cards below */}
+
+          {/* Enhanced Food Gallery Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             {products.map((product, index) => (
               <div
                 key={`info-${product.id}`}
-                className={`bg-cream/10 backdrop-blur-sm rounded-2xl p-6 border border-cream/20 hover:bg-cream/20 transition-all duration-300 cursor-pointer ${
-                  index === currentSlide ? 'ring-2 ring-terracotta' : ''
-                }`}
-                onClick={() => goToSlide(index)}
+                className="group relative bg-cream/10 backdrop-blur-sm rounded-2xl p-6 border border-cream/20 hover:bg-cream/20 hover:border-terracotta/30 transition-all duration-500 cursor-pointer transform hover:scale-105 hover:shadow-2xl"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-cream font-heading font-bold text-lg">{product.title}</h4>
-                  <div className={`w-3 h-3 rounded-full ${
-                    index === currentSlide ? 'bg-terracotta' : 'bg-cream/50'
-                  }`} />
+                {/* Food Preview Thumbnail */}
+                <div className="w-full h-32 mb-4 rounded-xl overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.alt}
+                    className="w-full h-full object-cover object-center image-crisp transition-all duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent opacity-50 group-hover:opacity-30 transition-opacity duration-500"></div>
                 </div>
-                <p className="text-cream/70 text-sm font-open-sans">
+                
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-cream font-heading font-bold text-lg group-hover:text-terracotta transition-colors duration-300">{product.title}</h4>
+                  <div className="w-4 h-4 rounded-full bg-cream/50 group-hover:bg-terracotta/70 transition-all duration-300" />
+                </div>
+                <p className="text-cream/70 text-sm font-open-sans group-hover:text-cream/90 transition-colors duration-300 leading-relaxed">
                   {product.description}
                 </p>
+                
+                {/* Premium Accent */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="w-2 h-2 bg-terracotta rounded-full shadow-lg shadow-terracotta/50"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -455,31 +301,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Sample Menu Items */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            {menuCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className={getAnimationClass(pdfAnimation.isVisible, "fadeUp", categoryIndex + 1)}>
-                <div className="bg-warmGray/50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <h3 className="text-2xl font-heading font-bold text-charcoal mb-8 text-center border-b-2 border-terracotta pb-4">
-                    {category.title}
-                  </h3>
-                  <div className="space-y-6">
-                    {category.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <h4 className="text-lg font-heading font-semibold text-charcoal mb-2">{item.name}</h4>
-                          <p className="text-charcoal/70 text-sm font-open-sans leading-relaxed">{item.description}</p>
-                        </div>
-                        <div className="ml-6 text-right">
-                          <span className="text-xl font-heading font-bold text-terracotta">{item.price} {t("currency")}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Menu section removed - no more menu categories */}
 
           {/* PDF Viewer */}
           <div className={getAnimationClass(pdfAnimation.isVisible, "scale", 1)}>
@@ -824,9 +646,9 @@ export default function HomePage() {
             <div>
               <h4 className="text-cream font-heading font-semibold mb-4">{t("footer.specialties")}</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("menu.items.sarmale")}</a></li>
-                <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("menu.items.mici")}</a></li>
-                <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("menu.items.papanasi")}</a></li>
+                <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("products.cheesecake.title")}</a></li>
+                <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("products.meatyPotato.title")}</a></li>
+                <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("products.veganPotato.title")}</a></li>
                 <li><a href="#" className="text-cream/70 hover:text-cream transition-colors font-open-sans">{t("menu.items.cozonac")}</a></li>
               </ul>
             </div>
