@@ -501,3 +501,38 @@
   transform: translateY(-8px);
   box-shadow: 0 25px 50px rgba(30, 42, 74, 0.15);
 }
+
+/* Custom Logo Styling */
+.logo-text {
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 10px rgba(242, 153, 74, 0.4));
+  transform: rotate(-2deg);
+  letter-spacing: -0.02em;
+}
+
+.logo-container {
+  transform: perspective(500px) rotateX(5deg);
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(242, 153, 74, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(242, 153, 74, 0.6));
+  }
+}
+
+/* Navbar Logo Styling */
+.navbar-logo-image {
+  transition: all 0.3s ease;
+  max-height: 90px;
+  width: auto;
+}
+
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+}

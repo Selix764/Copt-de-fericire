@@ -80,12 +80,12 @@ const translations = {
     "products.header": "Produsele Noastre",
     "products.title": "Cele Mai Populare Preparate",
     "products.subtitle": "Descoperă cele mai îndrăgite preparate ale clienților noștri, gătite cu ingrediente proaspete și dragoste.",
-    "products.cheesecake.title": "Cheesecake de Casă",
-    "products.cheesecake.description": "Desertul nostru emblematic - un cheesecake cremos și delicios care îți va cuceri inima la prima degustare.",
+    "products.cheesecake.title": "Cheesecake",
+    "products.cheesecake.description": "Cheesecake fin (100g) - brânză de vaci cu conținut redus de grăsimi 41%, zahăr, făină de grâu, ou, ulei de rapiță, apă, margarină. Alergeni: lapte, gluten, ou, nuci.",
     "products.meatyPotato.title": "Cartof Copt cu Pui",
-    "products.meatyPotato.description": "Pentru iubitorii de carne - cartof copt pufos cu bucăți suculente de pui și sos aromat, perfect pentru o masă consistentă.",
+    "products.meatyPotato.description": "Cartof local 300g, carne de pui 70g, sos de smântână 50g, cremă de gorgonzola 70g, rucola, ulei de măsline extra virgin, sare de mare. Alergeni: lapte, gluten, nucșoară.",
     "products.veganPotato.title": "Cartof Copt cu Tofu",
-    "products.veganPotato.description": "Opțiunea noastră vegană delicioasă - cartof copt cu tofu aromat și legume proaspete, plin de savoare și nutrienți.",
+    "products.veganPotato.description": "Cartof local 300g, tofu în saramură 60g, sfeclă marinată 55g, porumb dulce 40g, ulei de măsline extra virgin, sare de mare. Total: 455g. Alergeni: soia.",
     
     // Locations Section
     "locations.header": "Locațiile Noastre",
@@ -97,11 +97,15 @@ const translations = {
     "locations.northAddress": "Bulevardul Aviatorilor nr. 45, București, Sector 1",
     "locations.oldCenter": "Centrul Vechi",
     "locations.oldCenterAddress": "Strada Lipscani nr. 78, București, Sector 3",
+    "locations.mapLegend": "Locații restaurant - Click pe hartă pentru direcții",
+    "locations.findNearest": "Găsește cel mai apropiat restaurant",
+    "locations.mapInstructions": "Apasă pe hartă pentru direcții GPS sau sună pentru rezervări",
     
     // Social Media Section
     "social.header": "Social Media",
     "social.title": "Urmărește-ne & Rămâi Conectat",
     "social.description": "Primește cele mai recente actualizări, oferte speciale și fotografii delicioase!",
+    "social.followInstagram": "Urmărește-ne pe Instagram",
     
     // Contact Section
     "contact.header": "Contactează-ne",
@@ -120,7 +124,7 @@ const translations = {
     "contact.message": "Mesaj",
     "contact.sendMessage": "Trimite Mesajul",
     "contact.messagePlaceholder": "Scrie mesajul tău...",
-    
+
     // Footer
     "footer.tagline": "Unde fiecare masă devine o sărbătoare a tradițiilor românești",
     "footer.followUs": "Urmărește-ne",
@@ -208,11 +212,11 @@ const translations = {
     "products.title": "Most Popular Dishes",
     "products.subtitle": "Discover our customers' favorite dishes, made with fresh ingredients and love.",
     "products.cheesecake.title": "Homemade Cheesecake",
-    "products.cheesecake.description": "Our signature dessert - a creamy and delicious cheesecake that will win your heart at first taste.",
+    "products.cheesecake.description": "Fine cheesecake (100g) - low-fat cottage cheese 41%, sugar, wheat flour, egg, rapeseed oil, water, margarine. Allergens: milk, gluten, egg, nuts.",
     "products.meatyPotato.title": "Baked Potato with Chicken",
-    "products.meatyPotato.description": "For meat lovers - fluffy baked potato with succulent chicken pieces and flavorful sauce, perfect for a hearty meal.",
+    "products.meatyPotato.description": "Local potato 300g, chicken meat 70g, cream sauce 50g, gorgonzola cream 70g, arugula, extra virgin olive oil, sea salt. Allergens: milk, gluten, nutmeg.",
     "products.veganPotato.title": "Baked Potato with Tofu",
-    "products.veganPotato.description": "Our delicious vegan option - baked potato with seasoned tofu and fresh vegetables, full of flavor and nutrients.",
+    "products.veganPotato.description": "Local potato 300g, tofu in brine 60g, marinated beetroot 55g, sweet corn 40g, extra virgin olive oil, sea salt. Total: 455g. Allergens: soy.",
     
     // Locations Section
     "locations.header": "Our Locations",
@@ -224,11 +228,15 @@ const translations = {
     "locations.northAddress": "45 Aviators Boulevard, Bucharest, Sector 1",
     "locations.oldCenter": "Old Center",
     "locations.oldCenterAddress": "78 Lipscani Street, Bucharest, Sector 3",
+    "locations.mapLegend": "Restaurant locations - Click on map for directions",
+    "locations.findNearest": "Find the nearest restaurant",
+    "locations.mapInstructions": "Click on map for GPS directions or call for reservations",
     
     // Social Media Section
     "social.header": "Social Media",
     "social.title": "Follow Us & Stay Connected",
     "social.description": "Get the latest updates, special offers, and mouthwatering food photos!",
+    "social.followInstagram": "Follow Us on Instagram",
     
     // Contact Section
     "contact.header": "Contact Us",
@@ -247,7 +255,7 @@ const translations = {
     "contact.message": "Message",
     "contact.sendMessage": "Send Message",
     "contact.messagePlaceholder": "Write your message...",
-    
+
     // Footer
     "footer.tagline": "Where every meal becomes a celebration of Romanian traditions",
     "footer.followUs": "Follow Us",

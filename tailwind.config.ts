@@ -15,7 +15,7 @@ const config: Config = {
         'brush-orange': '#F2994A',
         'deep-orange': '#D97E2F',
         'gold-accent': '#FFC107',
-        'burst-yellow': '#FFEB3B',
+        'burst-yellow': '#F2994A',
         'strawberry-red': '#E53935',
         'leaf-green': '#66BB6A',
       },
@@ -30,26 +30,26 @@ const config: Config = {
         
         // Romanian-safe font for text with special characters
         'romanian': ['Noto Sans', 'Inter', 'system-ui', 'Helvetica', 'Arial', 'sans-serif'],
-      },
+        },
       animation: {
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
         'slide-in-right': 'slideInRight 0.6s ease-out forwards',
         'scale-in': 'scaleIn 0.6s ease-out forwards',
-      },
+        },
       keyframes: {
         slideUp: {
           '0%': { transform: 'translateY(50px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+      },
         slideInLeft: {
           '0%': { transform: 'translateX(-50px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
+      },
         slideInRight: {
           '0%': { transform: 'translateX(50px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
-        },
+      },
         scaleIn: {
           '0%': { transform: 'scale(0.8)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },

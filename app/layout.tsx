@@ -61,7 +61,7 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   title: "Copt de Fericire - Authentic Romanian Restaurant",
   description: "Experience authentic Romanian culinary traditions in a warm and welcoming atmosphere. Traditional dishes prepared with passion and respect for recipes passed down through generations.",
-}
+};
 
 export default function RootLayout({
   children,

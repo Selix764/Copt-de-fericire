@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Star, Clock, MapPin, Phone, Mail, ChefHat, Users, Award, Heart, Facebook, Instagram, Twitter } from "lucide-react"
 import { useScrollAnimation, getAnimationClass } from "./hooks/useScrollAnimation"
 import { useLanguage } from "./contexts/LanguageContext"
@@ -42,6 +43,13 @@ export default function HomePage() {
     }
   ]
 
+  // Review texts for each dish
+  const reviewTexts = [
+    "Hitul preferat al clienților – de neratat!",
+    "Alegerea nr. 1 în farfuriile oaspeților noștri!",
+    "Vedeta meniului – gustul care cucerește pe toată lumea!"
+  ]
+
   // No menu categories - removed desserts section
 
   const testimonials = [
@@ -70,26 +78,45 @@ export default function HomePage() {
 
   const locations = [
     {
-      name: t("locations.central"),
-      address: t("locations.centralAddress")
-    },
-    {
-      name: t("locations.north"), 
-      address: t("locations.northAddress")
-    },
-    {
-      name: t("locations.oldCenter"),
-      address: t("locations.oldCenterAddress")
+      name: "Copt de Fericire",
+      address: "Splaiul Independenței 2K, București",
+      coordinates: { lat: 44.4268, lng: 26.1025 }, // Splaiul Independenței coordinates
+      googleMapsUrl: "https://www.google.com/maps/place/Splaiul+Independenței+2K,+București,+Romania"
     }
   ]
 
+  // High-quality food images for social media
   const socialImages = [
-    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=500&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&h=400&fit=crop"
+    {
+      src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&h=400&fit=crop&crop=center&auto=format&q=80",
+      alt: "Delicious Romanian traditional food",
+      fallback: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=400&fit=crop"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=400&fit=crop&crop=center&auto=format&q=80",
+      alt: "Chef preparing traditional dishes",
+      fallback: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&h=400&fit=crop"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=400&fit=crop&crop=center&auto=format&q=80",
+      alt: "Beautiful restaurant atmosphere",
+      fallback: "https://images.unsplash.com/photo-1592861956120-e524fc739696?w=500&h=400&fit=crop"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=500&h=400&fit=crop&crop=center&auto=format&q=80",
+      alt: "Traditional Romanian sarmale",
+      fallback: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&h=400&fit=crop"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&h=400&fit=crop&crop=center&auto=format&q=80",
+      alt: "Fresh ingredients and cooking",
+      fallback: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&h=400&fit=crop"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&h=400&fit=crop&crop=center&auto=format&q=80",
+      alt: "Romanian desserts and sweets",
+      fallback: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=400&fit=crop"
+    }
   ]
 
   return (
@@ -98,7 +125,7 @@ export default function HomePage() {
       <div className="fixed top-4 right-4 z-50">
         <button
           onClick={toggleLanguage}
-          className="bg-burst-yellow text-chalkboard px-4 py-2 rounded-2xl font-poppins font-bold text-sm uppercase tracking-wider shadow-lg hover:bg-gold-accent transition-colors duration-300"
+          className="bg-brush-orange text-chalkboard px-4 py-2 rounded-2xl font-poppins font-bold text-sm uppercase tracking-wider shadow-lg hover:bg-gold-accent transition-colors duration-300"
         >
           {language === 'en' ? 'RO' : 'EN'}
         </button>
@@ -122,31 +149,31 @@ export default function HomePage() {
           <div className="max-w-4xl">
             <div ref={heroAnimation.ref} className={getAnimationClass(heroAnimation.isVisible, "fadeUp")}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-6 leading-tight tracking-wider">
-                <span className="font-poppins font-semibold text-brush-orange">{t("hero.restaurant")}</span>
-                <span className="block font-poppins font-semibold">COPT DE FERICIRE</span>
+                <span className="font-section-label text-brush-orange">{t("hero.restaurant")}</span>
+                <span className="block font-section-label  font-bold">COPT DE FERICIRE</span>
               </h1>
             </div>
             
             <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 1)}>
-              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-romanian">
+              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
                 {t("hero.subtitle")}
               </p>
             </div>
             
             <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 2)}>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link
-                  href="#menu"
-                  className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
-                >
+              <Link
+                href="#menu"
+                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
+              >
                   {t("menu.viewFullMenu")}
-                </Link>
-                <Link
-                  href="#contact"
+              </Link>
+              <Link
+                href="#contact"
                   className="bg-transparent border-2 border-chalk-white text-chalk-white hover:bg-chalk-white hover:text-chalkboard px-8 py-4 rounded-full font-poppins font-bold text-lg transition-all duration-300 text-center uppercase tracking-wider"
-                >
+              >
                   {t("contact.reserveTable")}
-                </Link>
+              </Link>
               </div>
             </div>
           </div>
@@ -178,7 +205,7 @@ export default function HomePage() {
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 1)}>
                   <div className="text-center">
-                    <div className="bg-burst-yellow rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
+                    <div className="bg-brush-orange rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
                       <Award className="w-8 h-8 text-chalkboard" />
                     </div>
                     <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.awardWinning")}</h3>
@@ -187,7 +214,7 @@ export default function HomePage() {
                 </div>
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 2)}>
                   <div className="text-center">
-                    <div className="bg-burst-yellow rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
+                    <div className="bg-brush-orange rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
                       <ChefHat className="w-8 h-8 text-chalkboard" />
                     </div>
                     <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.expertChefs")}</h3>
@@ -196,7 +223,7 @@ export default function HomePage() {
                 </div>
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 3)}>
                   <div className="text-center">
-                    <div className="bg-burst-yellow rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
+                    <div className="bg-brush-orange rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 transition-transform hover:scale-110">
                       <Heart className="w-8 h-8 text-chalkboard" />
                     </div>
                     <h3 className="text-chalk-white font-poppins font-bold text-lg">{t("story.madeWithLove")}</h3>
@@ -209,13 +236,13 @@ export default function HomePage() {
             <div className={getAnimationClass(aboutAnimation.isVisible, "fadeRight")}>
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070"
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070"
                   alt="Romanian Chef cooking"
                   className="rounded-2xl shadow-2xl w-full transition-transform hover:scale-105"
-                  style={{ filter: 'drop-shadow(8px 8px 16px rgba(0,0,0,0.3))' }}
+                style={{ filter: 'drop-shadow(8px 8px 16px rgba(0,0,0,0.3))' }}
                 />
                 <div className={getAnimationClass(aboutAnimation.isVisible, "scale", 1)}>
-                  <div className="absolute -bottom-6 -left-6 bg-burst-yellow text-chalkboard p-6 rounded-2xl shadow-xl transition-transform hover:scale-110">
+                  <div className="absolute -bottom-6 -left-6 bg-brush-orange text-chalkboard p-6 rounded-2xl shadow-xl transition-transform hover:scale-110">
                     <div className="text-center">
                       <div className="text-3xl font-montserrat font-bold">15+</div>
                       <div className="text-sm font-romanian">{t("story.yearsExperience")}</div>
@@ -251,7 +278,7 @@ export default function HomePage() {
               
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
                 {t("products.title")}
-              </h2>
+            </h2>
               
               <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-body leading-relaxed">
                 {t("products.subtitle")}
@@ -306,8 +333,8 @@ export default function HomePage() {
                       <span className="text-brush-orange font-romanian font-bold text-sm uppercase tracking-wider">
                         Specialitate
                       </span>
-                    </div>
-                    
+          </div>
+
                     {/* Title */}
                     <h3 className="text-4xl md:text-5xl font-banner text-chalk-white mb-6 group-hover:text-brush-orange transition-colors duration-500">
                       {product.title}
@@ -333,30 +360,22 @@ export default function HomePage() {
                         Rețetă tradițională
                       </span>
                     </div>
-                    
-                    {/* CTA Button */}
-                    <button className="group/btn bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-romanian font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center">
-                      Comandă acum
-                      <svg className="w-5 h-5 ml-3 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </button>
                   </div>
                   
                   {/* Floating Quote */}
                   <div className="absolute -top-8 -right-8 bg-chalk-white rounded-2xl p-6 shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500 opacity-90 group-hover:opacity-100 max-w-sm">
                     <p className="text-chalkboard font-romanian text-sm italic leading-relaxed">
-                      "Cel mai apreciat preparat de clienților noștri"
+                      "{reviewTexts[index]}"
                     </p>
                     <div className="flex text-brush-orange mt-2">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                ))}
+              </div>
+            </div>
+          </div>
               </div>
             ))}
           </div>
@@ -386,7 +405,7 @@ export default function HomePage() {
               
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
                 {t("menu.subtitle")}
-              </h2>
+            </h2>
               
               <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-romanian leading-relaxed">
                 {t("menu.description")}
@@ -404,16 +423,16 @@ export default function HomePage() {
 
           {/* PDF Viewer - Desktop and Mobile Versions */}
           <div className={getAnimationClass(pdfAnimation.isVisible, "scale", 1)}>
-            <div className="w-full max-w-7xl mx-auto">
+          <div className="w-full max-w-7xl mx-auto">
               
               {/* Desktop PDF Viewer */}
               <div className="hidden md:block bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-chalk-white">
-                  <iframe
-                    src="/api/menu-pdf"
+                <iframe
+                  src="/api/menu-pdf"
                     className="w-full h-full rounded-2xl"
-                    title="Restaurant Menu PDF"
-                    style={{
+                  title="Restaurant Menu PDF"
+                  style={{
                       minHeight: '600px',
                       background: '#FFFFFF'
                     }}
@@ -449,11 +468,11 @@ export default function HomePage() {
       <section id="locations" className="py-20 bg-chalkboard">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Map Side */}
+            {/* Interactive Map Side */}
             <div ref={locationsAnimation.ref} className={getAnimationClass(locationsAnimation.isVisible, "fadeLeft")}>
               <div className="relative">
-                {/* Romania Map Outline */}
-                <div className="w-full h-96 flex items-center justify-center">
+                {/* Artistic Romania Map Background */}
+                <div className="absolute inset-0 w-full h-96 flex items-center justify-center opacity-20 z-0">
                   <svg viewBox="0 0 400 300" className="w-full h-full">
                     {/* Romania country outline */}
                     <path
@@ -462,15 +481,44 @@ export default function HomePage() {
                       stroke="#FFFFFF"
                       strokeWidth="2"
                     />
-                    {/* Location pin for Bucharest */}
-                    <circle cx="200" cy="160" r="8" fill="#F2994A" stroke="#FFFFFF" strokeWidth="2" />
-                    <circle cx="200" cy="160" r="4" fill="#FFFFFF" />
+                    {/* Location pins for all restaurants */}
+                    <circle cx="200" cy="160" r="6" fill="#F2994A" stroke="#FFFFFF" strokeWidth="2" />
+                    <circle cx="190" cy="140" r="6" fill="#F2994A" stroke="#FFFFFF" strokeWidth="2" />
+                    <circle cx="210" cy="170" r="6" fill="#F2994A" stroke="#FFFFFF" strokeWidth="2" />
                   </svg>
+                </div>
+                
+                {/* Interactive Google Maps */}
+                <div className="relative z-10 w-full h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-chalk-white/20">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.123456789!2d26.100550!3d44.426800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzM2LjUiTiAyNsKwMDYnMDIuMCJF!5e0!3m2!1sen!2sro!4v1732384695000!5m2!1sen!2sro&q=Splaiul+Independenței+2K,+București"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Copt de Fericire Restaurant - Splaiul Independenței 2K"
+                    className="rounded-2xl"
+                  ></iframe>
+                  
+                  {/* Overlay corner decorations */}
+                  <div className="absolute top-4 right-4 bg-brush-orange/90 backdrop-blur-sm rounded-full p-2">
+                    <MapPin className="w-4 h-4 text-chalkboard" />
+                  </div>
+          </div>
+
+                {/* Map Legend */}
+                <div className="mt-4 bg-chalk-white/10 backdrop-blur-xl rounded-lg p-4 border border-chalk-white/20">
+                  <div className="flex items-center text-chalk-white text-sm">
+                    <div className="w-3 h-3 bg-burst-yellow rounded-full mr-2"></div>
+                    <span className="font-romanian">Locații restaurant - Click pe hartă pentru direcții</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Content Side */}
+            {/* Enhanced Content Side */}
             <div className={getAnimationClass(locationsAnimation.isVisible, "fadeRight")}>
               <div className="text-chalk-white">
                 <div className="inline-flex items-center mb-6">
@@ -484,20 +532,52 @@ export default function HomePage() {
                   {t("locations.subtitle")}
                 </h2>
                 
-                <button className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-8 py-3 rounded-2xl font-poppins font-bold text-sm uppercase tracking-wide transition-all duration-300 mb-12 flex items-center">
-                  {t("locations.getDirections")}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-
-                <div className="space-y-8">
+                {/* Enhanced location cards */}
+                <div className="space-y-6 mb-8">
                   {locations.map((location, index) => (
                     <div key={index} className={getAnimationClass(locationsAnimation.isVisible, "fadeUp", index + 1)}>
-                      <h3 className="text-xl font-poppins font-bold text-chalk-white mb-2">{location.name}</h3>
-                      <p className="text-chalk-white/70 font-body">{location.address}</p>
+                      <div className="bg-chalk-white/10 backdrop-blur-xl rounded-2xl p-6 border border-chalk-white/20 hover:bg-chalk-white/15 hover:border-brush-orange/30 transition-all duration-300 group">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <h3 className="text-xl font-poppins font-bold text-chalk-white mb-2 group-hover:text-brush-orange transition-colors">
+                              {location.name}
+                            </h3>
+                            <p className="text-chalk-white/70 font-body mb-3">{location.address}</p>
+                            <div className="flex items-center text-chalk-white/60 text-sm">
+                              <MapPin className="w-4 h-4 mr-1" />
+                              <span className="font-romanian">București, România</span>
+                            </div>
+                          </div>
+                          <a
+                            href={location.googleMapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-burst-yellow hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            title="Deschide în Google Maps"
+                          >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Call to action */}
+                <div className="bg-gradient-to-r from-brush-orange/20 to-deep-orange/20 backdrop-blur-sm rounded-2xl p-6 border border-brush-orange/30">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-chalk-white font-poppins font-bold text-lg mb-2">{t("locations.findNearest")}</h4>
+                      <p className="text-chalk-white/70 font-romanian text-sm">{t("locations.mapInstructions")}</p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <a href="tel:+40721234567" className="bg-burst-yellow hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110">
+                        <Phone className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -509,7 +589,7 @@ export default function HomePage() {
       <section id="social" className="py-20 bg-chalkboard">
         <div className="container mx-auto px-4 lg:px-8">
           <div ref={socialAnimation.ref} className={getAnimationClass(socialAnimation.isVisible, "fadeUp")}>
-            <div className="text-center mb-16">
+          <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
                 <div className="w-16 h-px bg-brush-orange mr-4"></div>
                 <span className="text-brush-orange text-sm font-section-label uppercase tracking-[0.2em]">
@@ -519,44 +599,58 @@ export default function HomePage() {
               </div>
               <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("social.title")}
-              </h2>
+            </h2>
               <p className="text-chalk-white/80 text-xl max-w-3xl mx-auto font-romanian">
                 {t("social.description")}
               </p>
             </div>
           </div>
 
-          {/* Image Grid */}
+          {/* Enhanced Image Grid */}
           <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 1)}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {socialImages.map((image, index) => (
-                <div key={index} className={`${getAnimationClass(socialAnimation.isVisible, "scale", index + 1)} overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer`}>
-                  <img 
-                    src={image} 
-                    alt={`Social media post ${index + 1}`}
-                    className="w-full h-64 object-cover"
-                  />
+                <div key={index} className={`${getAnimationClass(socialAnimation.isVisible, "scale", index + 1)} group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl`}>
+                  {/* Image with fallback */}
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      className="object-cover transition-all duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = image.fallback;
+                      }}
+                      priority={index < 3} // Prioritize first 3 images
+                    />
+                    
+
+                  </div>
                 </div>
               ))}
             </div>
+            
+            {/* View More Button */}
+            <div className="text-center mt-8">
+              <a
+                href="https://www.instagram.com/copt_de_fericire/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-gradient-to-r from-brush-orange to-deep-orange hover:from-deep-orange hover:to-brush-orange text-chalk-white px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Instagram className="w-6 h-6 mr-3" />
+                {t("social.followInstagram")}
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              </div>
           </div>
 
-          {/* Social Icons */}
-          <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 2)}>
-            <div className="text-center mt-12">
-              <div className="flex justify-center space-x-6">
-                <div className="bg-burst-yellow hover:bg-gold-accent text-chalkboard w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer transform hover:scale-110">
-                  <Facebook className="w-6 h-6" />
-                </div>
-                <div className="bg-burst-yellow hover:bg-gold-accent text-chalkboard w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer transform hover:scale-110">
-                  <Instagram className="w-6 h-6" />
-                </div>
-                <div className="bg-burst-yellow hover:bg-gold-accent text-chalkboard w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer transform hover:scale-110">
-                  <Twitter className="w-6 h-6" />
-                </div>
-              </div>
-            </div>
-          </div>
+       
+         
         </div>
       </section>
 
@@ -585,7 +679,7 @@ export default function HomePage() {
               </div>
               <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-white mb-6">
                 {t("contact.header")}
-              </h2>
+            </h2>
             </div>
           </div>
 
@@ -611,7 +705,7 @@ export default function HomePage() {
                     <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <MapPin className="w-4 h-4 text-brush-orange" />
                     </div>
-                    <div>
+                  <div>
                       <h5 className="font-poppins font-semibold text-white mb-1 text-sm">{t("contact.addressTitle")}</h5>
                       <p className="font-romanian text-white/70 text-sm whitespace-pre-line">{t("contact.address")}</p>
                     </div>
@@ -620,8 +714,8 @@ export default function HomePage() {
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <Phone className="w-4 h-4 text-brush-orange" />
-                    </div>
-                    <div>
+                </div>
+                  <div>
                       <h5 className="font-poppins font-semibold text-white mb-1 text-sm">{t("contact.phoneTitle")}</h5>
                       <p className="font-body text-white/70 text-sm">{t("contact.phone")}</p>
                     </div>
@@ -630,8 +724,8 @@ export default function HomePage() {
                   <div className="flex items-start">
                     <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                       <Clock className="w-4 h-4 text-brush-orange" />
-                    </div>
-                    <div>
+                </div>
+                  <div>
                       <h5 className="font-poppins font-semibold text-white mb-1 text-sm">{t("contact.hoursTitle")}</h5>
                       <p className="font-romanian text-white/70 text-sm whitespace-pre-line">{t("contact.hours")}</p>
                     </div>
@@ -646,15 +740,15 @@ export default function HomePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.firstName")}</label>
-                    <input
-                      type="text"
+                  <input
+                    type="text"
                       placeholder="Alexandru"
                       className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
-                    />
+                  />
                   </div>
                   <div>
                     <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.lastName")}</label>
-                    <input
+                  <input
                       type="text"
                       placeholder="Popescu"
                       className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
@@ -678,7 +772,7 @@ export default function HomePage() {
                         <span className="text-xs mr-2">🇷🇴</span>
                         <span className="text-white text-sm">▼</span>
                       </div>
-                      <input
+                  <input
                         type="tel"
                         placeholder="+40 721 234 567"
                         className="flex-1 bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-r-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
@@ -689,11 +783,11 @@ export default function HomePage() {
 
                 <div>
                   <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.message")}</label>
-                  <textarea
+                <textarea
                     rows={6}
                     placeholder={t("contact.messagePlaceholder")}
                     className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent resize-none font-body"
-                  ></textarea>
+                ></textarea>
                 </div>
 
                 <button

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X, Phone } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
@@ -35,9 +36,16 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-chalk-white font-poppins font-bold text-xl lg:text-2xl hover:text-burst-yellow transition-colors duration-300 tracking-wider drop-shadow-lg"
+            className="navbar-logo-container hover:scale-105 transition-all duration-300 flex items-center"
           >
-            COPT DE FERICIRE
+            <Image
+              src="/placeholder-logo.png"
+              alt="Copt de Fericire Logo"
+              width={180}
+              height={90}
+              className="navbar-logo-image"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
