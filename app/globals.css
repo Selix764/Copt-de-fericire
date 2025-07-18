@@ -57,6 +57,25 @@
     display: none;
   }
 
+  /* Specific fixes for sections with unwanted scrollbars */
+  #social {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  #social .grid {
+    overflow-x: hidden !important;
+  }
+
+  /* Fix for signature dishes showcase section */
+  section:has(.space-y-24) {
+    overflow-x: hidden !important;
+  }
+
+  .space-y-24 {
+    overflow-x: hidden !important;
+  }
+
   .font-heading {
     font-family: var(--font-montserrat);
   }

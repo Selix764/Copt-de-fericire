@@ -152,12 +152,12 @@ export default function HomePage() {
             
                         <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 2)}>
               <div className="flex justify-start mb-12">
-                <Link
-                  href="#menu"
+              <Link
+                href="#menu"
                   className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
-                >
+              >
                   {t("menu.viewFullMenu")}
-                </Link>
+              </Link>
               </div>
             </div>
           </div>
@@ -240,7 +240,8 @@ export default function HomePage() {
       </section>
 
       {/* Signature Dishes Showcase */}
-      <section className="py-32 bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden"
+        style={{ overflowX: 'hidden', overflowY: 'visible' }}>
         {/* Artistic Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brush-orange/10 rounded-full blur-3xl"></div>
@@ -248,7 +249,7 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-deep-orange/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
           {/* Section Header */}
           <div ref={productsAnimation.ref} className={getAnimationClass(productsAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-20">
@@ -279,7 +280,7 @@ export default function HomePage() {
           </div>
 
           {/* Dishes Showcase */}
-          <div className="space-y-24">
+          <div className="space-y-24" style={{ overflowX: 'hidden' }}>
             {products.map((product, index) => (
               <div
                 key={product.id}
@@ -413,8 +414,8 @@ export default function HomePage() {
               <div className="hidden md:block bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-chalk-white">
                 <iframe
-                  src="/menu.pdf"
-                    className="w-full h-full rounded-2xl no-scrollbar"
+                  src="/api/menu-pdf"
+                    className="w-full h-full rounded-2xl"
                   title="Restaurant Menu PDF"
                   style={{
                       minHeight: '600px',
@@ -424,15 +425,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile PDF Viewer - Direct PDF for Mobile */}
+              {/* Mobile PDF Viewer - Google Drive Embed for Mobile */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
-                <div className="w-full h-[80vh] rounded-2xl overflow-hidden bg-chalk-white">
+                <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
-                    src="/menu.pdf"
-                    className="w-full h-full rounded-2xl border-0 no-scrollbar"
+                    src="https://drive.google.com/file/d/1syb-SgovlRgSXTXgslq72fWAvQ7eOUxC/preview"
+                    className="w-full h-full rounded-2xl border-0"
                     title="Restaurant Menu PDF"
                     style={{
-                      minHeight: '80vh',
+                      minHeight: '100vh',
                       background: '#FFFFFF'
                     }}
                     allow="autoplay"
@@ -570,8 +571,9 @@ export default function HomePage() {
       </section>
 
       {/* Social Media Section */}
-      <section id="social" className="py-20 bg-chalkboard">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="social" className="py-20 bg-chalkboard" 
+        style={{ overflowX: 'hidden', overflowY: 'visible' }}>
+        <div className="container mx-auto px-4 lg:px-8" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
           <div ref={socialAnimation.ref} className={getAnimationClass(socialAnimation.isVisible, "fadeUp")}>
           <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
@@ -591,8 +593,10 @@ export default function HomePage() {
           </div>
 
           {/* Enhanced Image Grid */}
-          <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 1)}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 1)} 
+            style={{ overflowX: 'hidden' }}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6" 
+              style={{ overflowX: 'hidden' }}>
               {socialImages.map((image, index) => (
                 <div key={index} className={`${getAnimationClass(socialAnimation.isVisible, "scale", index + 1)} group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl`}>
                   {/* Image with fallback */}
