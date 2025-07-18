@@ -908,89 +908,166 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer Section */}
-      <section className="bg-chalkboard section-padding">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {/* Brand Column */}
-            <div className="lg:col-span-1">
-              <div className="mb-6">
-                <h3 className="text-2xl font-poppins font-bold text-brush-orange mb-2">COPT DE FERICIRE®</h3>
-                <div className="flex items-center text-chalk-white mb-4">
-                  <span className="text-2xl mr-2">🍽️</span>
-                  <span className="font-body font-medium">{t("footer.tagline")}</span>
-                </div>
-              </div>
-              
-                              <div className="mb-6">
-                  <p className="text-chalk-white/60 text-sm font-body mb-4">{t("footer.followUs")}</p>
-                  <div className="flex space-x-3">
-                    <a 
-                      href="https://www.facebook.com/share/1AyJAsg6TP/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer"
-                      aria-label="Follow us on Facebook"
-                    >
-                      <Facebook className="w-4 h-4 text-chalkboard" />
-                    </a>
-                    <a 
-                      href="https://www.instagram.com/copt_de_fericire?igsh=cHFqeTN0eGdkcGYz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer"
-                      aria-label="Follow us on Instagram"
-                    >
-                      <Instagram className="w-4 h-4 text-chalkboard" />
-                    </a>
+      {/* Modern Footer Section */}
+      <footer className="relative bg-gradient-to-br from-chalkboard via-chalkboard/98 to-chalkboard/95 overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-10 w-96 h-96 bg-brush-orange/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-accent/3 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="relative z-10">
+          {/* Main Footer Content */}
+          <div className="container-custom py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+              {/* Brand Section - Takes more space */}
+              <div className="lg:col-span-5">
+                <div className="mb-8">
+                  <h2 className="text-4xl font-section-label text-brush-orange mb-4">
+                    COPT DE FERICIRE
+                  </h2>
+                  <p className="text-chalk-white/80 text-lg font-romanian leading-relaxed mb-6 max-w-md">
+                    {t("footer.tagline")}
+                  </p>
+                  <div className="bg-brush-orange/10 backdrop-blur-sm rounded-2xl p-6 border border-brush-orange/20">
+                    <h3 className="text-chalk-white font-poppins font-bold text-lg mb-4">
+                      📍 Găsește-ne în București
+                    </h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <MapPin className="w-5 h-5 text-brush-orange mr-3 mt-1 flex-shrink-0" />
+                        <div>
+                          <p className="text-chalk-white font-romanian font-semibold">Restaurant Principal</p>
+                          <p className="text-chalk-white/70 text-sm">Splaiul Independenței 2K, București 030099</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <Phone className="w-5 h-5 text-brush-orange mr-3" />
+                        <a href="tel:+40721234567" className="text-chalk-white hover:text-brush-orange transition-colors font-romanian">
+                          +40 721 234 567
+                        </a>
+                      </div>
+                      <div className="flex items-center">
+                        <Clock className="w-5 h-5 text-brush-orange mr-3" />
+                        <span className="text-chalk-white/70 text-sm font-romanian">Luni - Duminică: 11:00 - 23:00</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-            </div>
+              </div>
 
-            {/* Pages Column */}
-            <div>
-              <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.pages")}</h4>
-              <ul className="space-y-2">
-                <li><a href="#about" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.about")}</a></li>
-                <li><a href="#menu" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.menu")}</a></li>
-                <li><a href="#locations" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.locations")}</a></li>
-                <li><a href="#contact" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("footer.contact")}</a></li>
-              </ul>
-            </div>
+              {/* Navigation Links */}
+              <div className="lg:col-span-2">
+                <h4 className="text-chalk-white font-poppins font-bold text-lg mb-6 relative">
+                  {t("footer.pages")}
+                  <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-brush-orange"></div>
+                </h4>
+                <ul className="space-y-4">
+                  <li>
+                    <a href="#about" className="text-chalk-white/70 hover:text-brush-orange transition-colors font-romanian flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-brush-orange/50 rounded-full mr-3 group-hover:bg-brush-orange transition-colors"></span>
+                      {t("footer.about")}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#menu" className="text-chalk-white/70 hover:text-brush-orange transition-colors font-romanian flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-brush-orange/50 rounded-full mr-3 group-hover:bg-brush-orange transition-colors"></span>
+                      {t("footer.menu")}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#locations" className="text-chalk-white/70 hover:text-brush-orange transition-colors font-romanian flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-brush-orange/50 rounded-full mr-3 group-hover:bg-brush-orange transition-colors"></span>
+                      {t("footer.locations")}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" className="text-chalk-white/70 hover:text-brush-orange transition-colors font-romanian flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-brush-orange/50 rounded-full mr-3 group-hover:bg-brush-orange transition-colors"></span>
+                      {t("footer.contact")}
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-            
+              {/* Social Media & Newsletter */}
+              <div className="lg:col-span-5">
+                <div className="space-y-8">
+                  {/* Social Media */}
+                  <div>
+                    <h4 className="text-chalk-white font-poppins font-bold text-lg mb-6 relative">
+                      Urmărește-ne & Rămâi Conectat
+                      <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-brush-orange"></div>
+                    </h4>
+                    <p className="text-chalk-white/70 text-sm font-romanian mb-6">
+                      Primește cele mai recente actualizări, oferte speciale și fotografii delicioase!
+                    </p>
+                    <div className="flex space-x-4 mb-6">
+                      <a 
+                        href="https://www.facebook.com/share/1AyJAsg6TP/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group bg-brush-orange/20 hover:bg-brush-orange rounded-2xl p-4 transition-all duration-300 transform hover:scale-105"
+                        aria-label="Follow us on Facebook"
+                      >
+                        <Facebook className="w-6 h-6 text-brush-orange group-hover:text-chalkboard transition-colors" />
+                      </a>
+                      <a 
+                        href="https://www.instagram.com/copt_de_fericire?igsh=cHFqeTN0eGdkcGYz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group bg-brush-orange/20 hover:bg-brush-orange rounded-2xl p-4 transition-all duration-300 transform hover:scale-105"
+                        aria-label="Follow us on Instagram"
+                      >
+                        <Instagram className="w-6 h-6 text-brush-orange group-hover:text-chalkboard transition-colors" />
+                      </a>
+                    </div>
+                  </div>
 
-            {/* Newsletter Column */}
-            <div>
-              <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.newsletter")}</h4>
-              <div className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  placeholder={t("footer.enterEmail")}
-                  className="w-full bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-2xl border border-chalk-white/30 focus:outline-none focus:border-brush-orange font-body min-h-[48px]"
-                />
-                <button className="w-full bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-2xl font-poppins font-semibold transition-colors flex items-center justify-center whitespace-nowrap min-h-[48px] text-sm md:text-base">
-                  <span className="mr-2">{t("footer.subscribe")}</span>
-                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                  {/* Newsletter */}
+                  <div className="bg-gradient-to-r from-brush-orange/10 to-gold-accent/5 backdrop-blur-sm rounded-2xl p-6 border border-brush-orange/20">
+                    <h4 className="text-chalk-white font-poppins font-bold text-lg mb-4">
+                      📧 Newsletter
+                    </h4>
+                    <p className="text-chalk-white/70 text-sm font-romanian mb-4">
+                      {t("footer.newsletter")}
+                    </p>
+                    <div className="flex gap-3">
+                      <input
+                        type="email"
+                        placeholder={t("footer.enterEmail")}
+                        className="flex-1 bg-chalkboard/50 text-chalk-white placeholder-chalk-white/50 px-4 py-3 rounded-xl border border-chalk-white/20 focus:outline-none focus:border-brush-orange focus:ring-2 focus:ring-brush-orange/20 font-romanian transition-all duration-300"
+                      />
+                      <button className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-xl font-poppins font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap">
+                        {t("footer.subscribe")}
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Bottom Footer */}
-          <div className="border-t border-chalk-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <div className="text-chalk-white/60 text-sm font-body mb-4 md:mb-0">
-              © 2024 Copt de Fericire. {t("footer.rights")}
-            </div>
-            <div className="flex space-x-6">
-              <a href="#" className="text-chalk-white/60 hover:text-chalk-white text-sm font-body transition-colors">{t("footer.privacyPolicy")}</a>
-              <a href="#" className="text-chalk-white/60 hover:text-chalk-white text-sm font-body transition-colors">{t("footer.terms")}</a>
+          <div className="border-t border-chalk-white/10">
+            <div className="container-custom py-8">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="text-chalk-white/60 text-sm font-romanian mb-4 md:mb-0 text-center md:text-left">
+                  © 2024 Copt de Fericire. {t("footer.rights")}
+                </div>
+                <div className="flex space-x-6">
+                  <a href="#" className="text-chalk-white/60 hover:text-brush-orange text-sm font-romanian transition-colors">
+                    {t("footer.privacyPolicy")}
+                  </a>
+                  <a href="#" className="text-chalk-white/60 hover:text-brush-orange text-sm font-romanian transition-colors">
+                    {t("footer.terms")}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </footer>
     </>
   )
 }

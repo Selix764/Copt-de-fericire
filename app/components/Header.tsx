@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, Home, Utensils, MessageCircle, Globe } from "lucide-react"
+import { Menu, X, Phone, Home, Utensils, MessageCircle, Globe, MapPin } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Header() {
@@ -11,9 +11,9 @@ export default function Header() {
   const { t, language, toggleLanguage } = useLanguage()
 
   const navigation = [
-    { name: t("story.header"), href: "#about", icon: Home },
-    { name: t("menu.header"), href: "#menu", icon: Utensils },
-    { name: t("contact.header"), href: "#contact", icon: MessageCircle },
+    { name: "Povestea Noastră", href: "#about", icon: Home },
+    { name: "Meniul Nostru", href: "#menu", icon: Utensils },
+    { name: "Contactează-ne", href: "#contact", icon: MessageCircle },
   ]
 
   useEffect(() => {
