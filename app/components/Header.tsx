@@ -33,8 +33,8 @@ export default function Header() {
         isScrolled ? 'bg-chalkboard/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center py-4">
+      <nav className="container-custom">
+        <div className="flex items-center py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link

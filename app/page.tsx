@@ -135,22 +135,18 @@ export default function HomePage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl">
-            <div ref={heroAnimation.ref} className={getAnimationClass(heroAnimation.isVisible, "fadeUp")}>
+        <div className="relative z-10 container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div ref={heroAnimation.ref} className={getAnimationClass(heroAnimation.isVisible, "fadeLeft")}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-6 leading-tight tracking-wider">
                 <span className="font-section-label text-brush-orange">{t("hero.restaurant")}</span>
                 <span className="block font-section-label  font-bold">COPT DE FERICIRE</span>
               </h1>
-            </div>
-            
-            <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 1)}>
+              
               <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
                 {t("hero.subtitle")}
               </p>
-            </div>
-            
-                        <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 2)}>
+              
               <div className="flex justify-start mb-12">
               <Link
                 href="#menu"
@@ -165,8 +161,8 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-chalkboard">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="about" className="section-padding bg-chalkboard">
+        <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div ref={aboutAnimation.ref} className={getAnimationClass(aboutAnimation.isVisible, "fadeLeft")}>
               <div className="inline-flex items-center mb-6">
@@ -240,7 +236,7 @@ export default function HomePage() {
       </section>
 
       {/* Signature Dishes Showcase */}
-      <section className="py-32 bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
         {/* Artistic Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brush-orange/10 rounded-full blur-3xl"></div>
@@ -248,7 +244,7 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-deep-orange/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container-custom relative z-10">
           {/* Section Header */}
           <div ref={productsAnimation.ref} className={getAnimationClass(productsAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-20">
@@ -369,14 +365,14 @@ export default function HomePage() {
       </section>
 
       {/* PDF Menu Section */}
-      <section id="menu" className="py-32 bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
+      <section id="menu" className="section-padding bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
         {/* Artistic Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-10 w-72 h-72 bg-brush-orange/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-gold-accent/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container-custom relative z-10">
           <div ref={pdfAnimation.ref} className={getAnimationClass(pdfAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-20">
               <div className="inline-flex items-center mb-6">
@@ -449,8 +445,8 @@ export default function HomePage() {
       </section>
 
       {/* Locations Section */}
-      <section id="locations" className="py-20 bg-chalkboard">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="locations" className="section-padding bg-chalkboard">
+        <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Interactive Map Side */}
             <div ref={locationsAnimation.ref} className={getAnimationClass(locationsAnimation.isVisible, "fadeLeft")}>
@@ -570,8 +566,8 @@ export default function HomePage() {
       </section>
 
       {/* Social Media Section */}
-      <section id="social" className="py-20 bg-chalkboard">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="social" className="section-padding bg-chalkboard">
+        <div className="container-custom">
           <div ref={socialAnimation.ref} className={getAnimationClass(socialAnimation.isVisible, "fadeUp")}>
           <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
@@ -641,7 +637,7 @@ export default function HomePage() {
       {/* Contact Section */}
       <section 
         id="contact" 
-        className="py-20 relative"
+        className="section-padding relative"
         style={{
           backgroundImage: "url('/images/red-ornate-background.jpg'), linear-gradient(135deg, #C36B51 0%, #B85A47 25%, #A54A3B 50%, #943C31 75%, #832E27 100%)",
           backgroundSize: 'cover, 100% 100%',
@@ -651,7 +647,7 @@ export default function HomePage() {
       >
         {/* Dark overlay for better readability */}
         <div className="absolute inset-0 bg-black/30"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container-custom relative z-10">
           <div ref={contactAnimation.ref} className={getAnimationClass(contactAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
@@ -787,8 +783,8 @@ export default function HomePage() {
       </section>
 
       {/* Footer Section */}
-      <section className="bg-chalkboard py-16">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="bg-chalkboard section-padding">
+        <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Brand Column */}
             <div className="lg:col-span-1">

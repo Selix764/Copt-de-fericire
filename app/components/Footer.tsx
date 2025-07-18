@@ -6,7 +6,7 @@ import { Facebook, Instagram, Twitter, Phone, Mail, MapPin, Clock } from "lucide
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
-      <div className="container mx-auto px-4 lg:px-8 py-16">
+      <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
