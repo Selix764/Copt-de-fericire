@@ -151,6 +151,8 @@
   .font-heading {
     font-family: var(--font-montserrat);
   }
+
+
 }
 
 @layer components {

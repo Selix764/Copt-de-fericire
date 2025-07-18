@@ -10,7 +10,6 @@ export default function HomePage() {
   const { t, language, toggleLanguage } = useLanguage()
 
   // Animation hooks for different sections
-  const heroAnimation = useScrollAnimation(0.1)
   const aboutAnimation = useScrollAnimation(0.1)
   const productsAnimation = useScrollAnimation(0.1)
   const pdfAnimation = useScrollAnimation(0.1)
@@ -122,41 +121,126 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-chalkboard overflow-hidden -mt-20 pt-20">
+      <section 
+        className="relative w-full bg-chalkboard overflow-hidden"
+        style={{
+          height: '100vh',
+          minHeight: '100vh',
+          maxHeight: '100vh',
+          paddingTop: '5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          overflowY: 'hidden',
+          overflowX: 'hidden',
+          position: 'relative'
+        }}
+        onWheel={(e) => e.preventDefault()}
+        onTouchMove={(e) => e.preventDefault()}
+      >
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074')",
-            }}
-          />
-          <div className="absolute inset-0 bg-chalkboard/80"></div>
-        </div>
-
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074")',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 0
+          }}
+        />
+        
+        {/* Overlay */}
+        <div 
+          className="absolute inset-0 bg-chalkboard/80"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 1
+          }}
+        />
+        
         {/* Content */}
-        <div className="relative z-10 container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div ref={heroAnimation.ref} className={getAnimationClass(heroAnimation.isVisible, "fadeLeft")}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-montserrat font-bold text-chalk-white mb-6 leading-tight tracking-wider">
-                <span className="font-section-label text-brush-orange">{t("hero.restaurant")}</span>
-                <span className="block font-section-label  font-bold">COPT DE FERICIRE</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl lg:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
-                {t("hero.subtitle")}
-              </p>
-              
-              <div className="flex justify-start mb-12">
-              <Link
-                href="#menu"
-                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 md:px-8 md:py-4 rounded-2xl font-poppins font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider whitespace-nowrap min-h-[48px] flex items-center justify-center"
-              >
-                  {t("menu.viewFullMenu")}
-              </Link>
-              </div>
-            </div>
-          </div>
+        <div 
+          className="relative z-10 w-full"
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: '0 2rem',
+            position: 'relative',
+            zIndex: 10,
+            height: 'auto',
+            overflow: 'hidden'
+          }}
+        >
+                                <div 
+             style={{
+               maxWidth: '600px',
+               pointerEvents: 'auto'
+             }}
+           >
+             <h1 
+               className="animate-fade-in-up"
+               style={{
+                 fontSize: 'clamp(2rem, 8vw, 5rem)',
+                 fontFamily: 'var(--font-section-label)',
+                 fontWeight: 700,
+                 color: 'white',
+                 lineHeight: 1.1,
+                 margin: 0,
+                 marginBottom: '1.5rem',
+                 userSelect: 'none',
+                 pointerEvents: 'none'
+               }}
+             >
+               <span 
+                 style={{
+                   color: '#F2994A',
+                   display: 'block',
+                   fontSize: '0.6em'
+                 }}
+               >
+                 {t("hero.restaurant")}
+               </span>
+               <span 
+                 style={{
+                   color: 'white',
+                   display: 'block'
+                 }}
+               >
+                 COPT DE FERICIRE
+               </span>
+             </h1>
+             
+             <p 
+               className="animate-fade-in-up animation-delay-300"
+               style={{
+                 fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
+                 fontFamily: 'var(--font-body)',
+                 lineHeight: 1.6,
+                 color: 'rgba(255, 255, 255, 0.9)',
+                 margin: 0,
+                 marginBottom: '2rem',
+                 maxWidth: '500px',
+                 userSelect: 'none',
+                 pointerEvents: 'none'
+               }}
+             >
+               {t("hero.subtitle")}
+             </p>
+             
+             <Link 
+               href="#menu"
+               className="animate-fade-in-up animation-delay-600 inline-block bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 md:px-8 md:py-4 rounded-2xl font-poppins font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase tracking-wider"
+             >
+               {t("menu.viewFullMenu")}
+             </Link>
+           </div>
         </div>
       </section>
 
