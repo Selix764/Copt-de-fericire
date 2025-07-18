@@ -13,7 +13,12 @@ export async function GET(request: NextRequest) {
     
     if (!metadataResponse.ok) {
       console.error('Error fetching file metadata:', metadataResponse.status, metadataResponse.statusText)
-      return NextResponse.redirect(new URL('/menu.pdf', request.url))
+      return new NextResponse('Menu PDF temporarily unavailable. Please try again later.', {
+        status: 503,
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+      })
     }
 
     const fileMetadata = await metadataResponse.json()
@@ -21,7 +26,12 @@ export async function GET(request: NextRequest) {
     // Check if it's a PDF file
     if (fileMetadata.mimeType !== 'application/pdf') {
       console.error('File is not a PDF:', fileMetadata.mimeType)
-      return NextResponse.redirect(new URL('/menu.pdf', request.url))
+      return new NextResponse('Menu PDF temporarily unavailable. Please try again later.', {
+        status: 503,
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+      })
     }
 
     // Get the file content
@@ -31,7 +41,12 @@ export async function GET(request: NextRequest) {
     
     if (!fileResponse.ok) {
       console.error('Error fetching file content:', fileResponse.status, fileResponse.statusText)
-      return NextResponse.redirect(new URL('/menu.pdf', request.url))
+      return new NextResponse('Menu PDF temporarily unavailable. Please try again later.', {
+        status: 503,
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+      })
     }
 
     const fileBuffer = await fileResponse.arrayBuffer()
@@ -54,8 +69,13 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Error fetching PDF from Google Drive:', error)
     
-    // Fallback to static PDF if Google Drive fails
-    return NextResponse.redirect(new URL('/menu.pdf', request.url))
+    // Return a simple error response instead of redirect
+    return new NextResponse('Menu PDF temporarily unavailable. Please try again later.', {
+      status: 503,
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    })
   }
 }
 
