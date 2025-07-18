@@ -614,13 +614,7 @@ export default function HomePage() {
                   </div>
           </div>
 
-                {/* Map Legend */}
-                <div className="mt-4 bg-chalk-white/10 backdrop-blur-xl rounded-lg p-4 border border-chalk-white/20">
-                  <div className="flex items-center text-chalk-white text-sm">
-                    <div className="w-3 h-3 bg-brush-orange rounded-full mr-2"></div>
-                    <span className="font-romanian">{t("locations.mapLegend")}</span>
-                  </div>
-                </div>
+
               </div>
             </div>
 
