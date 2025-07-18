@@ -150,14 +150,14 @@ export default function HomePage() {
               </p>
             </div>
             
-            <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 2)}>
-              <div className="flex justify-center mb-12">
-              <Link
-                href="#menu"
+                        <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 2)}>
+              <div className="flex justify-start mb-12">
+                <Link
+                  href="#menu"
                   className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
-              >
+                >
                   {t("menu.viewFullMenu")}
-              </Link>
+                </Link>
               </div>
             </div>
           </div>
