@@ -320,7 +320,7 @@ export default function HomePage() {
       </section>
 
       {/* Signature Dishes Showcase */}
-      <section className="section-padding bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-visible">
         {/* Artistic Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brush-orange/10 rounded-full blur-3xl"></div>
@@ -328,7 +328,7 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-deep-orange/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 overflow-visible">
           {/* Section Header */}
           <div ref={productsAnimation.ref} className={getAnimationClass(productsAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-20">
@@ -359,34 +359,68 @@ export default function HomePage() {
           </div>
 
           {/* Dishes Showcase */}
-          <div className="space-y-24 w-full max-w-full">
+          <div className="space-y-24 w-full max-w-full py-12 overflow-visible">
             {products.map((product, index) => (
               <div
                 key={product.id}
-                className={`group relative ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-16`}
+                className={`group relative ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-16 overflow-visible`}
               >
                 {/* Dish Image */}
-                <div className="lg:w-1/2 relative">
-                  <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-all duration-700">
+                <div 
+                  className="lg:w-1/2 relative"
+                  onWheel={(e) => e.preventDefault()}
+                  onTouchMove={(e) => e.preventDefault()}
+                  style={{ overflow: 'hidden' }}
+                >
+                  <div 
+                    className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-105 transition-all duration-700"
+                    onWheel={(e) => e.preventDefault()}
+                    onTouchMove={(e) => e.preventDefault()}
+                    style={{ overflow: 'hidden' }}
+                  >
                     <img
                       src={product.image}
                       alt={product.alt}
                       className="w-full h-64 md:h-80 lg:h-[500px] object-cover transition-all duration-700 group-hover:scale-110"
                       loading="lazy"
                       decoding="async"
+                      onWheel={(e) => e.preventDefault()}
+                      onTouchMove={(e) => e.preventDefault()}
+                      style={{
+                        userSelect: 'none',
+                        pointerEvents: 'none',
+                        transform: 'translate3d(0, 0, 0)',
+                        backfaceVisibility: 'hidden'
+                      }}
+                      draggable="false"
                     />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+                      style={{ pointerEvents: 'none' }}
+                    ></div>
                     
                     {/* Decorative Corner Elements */}
-                    <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-chalk-white/30 rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 border-b-4 border-l-4 border-chalk-white/30 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    <div 
+                      className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-chalk-white/30 rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"
+                      style={{ pointerEvents: 'none' }}
+                    ></div>
+                    <div 
+                      className="absolute bottom-0 left-0 w-24 h-24 border-b-4 border-l-4 border-chalk-white/30 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"
+                      style={{ pointerEvents: 'none' }}
+                    ></div>
                   </div>
                   
                   {/* Floating Elements */}
-                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-gold-accent/20 rounded-full blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                  <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-brush-orange/20 rounded-full blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+                  <div 
+                    className="absolute -top-6 -right-6 w-32 h-32 bg-gold-accent/20 rounded-full blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                    style={{ pointerEvents: 'none' }}
+                  ></div>
+                  <div 
+                    className="absolute -bottom-6 -left-6 w-24 h-24 bg-brush-orange/20 rounded-full blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500"
+                    style={{ pointerEvents: 'none' }}
+                  ></div>
                 </div>
 
                 {/* Content Card */}
@@ -426,19 +460,24 @@ export default function HomePage() {
                     </div>
                   </div>
                   
-                  {/* Floating Quote */}
-                  <div className="absolute -top-8 -right-8 bg-chalk-white rounded-2xl p-6 shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500 opacity-90 group-hover:opacity-100 max-w-sm exact-height">
-                    <p className="text-chalkboard font-romanian text-sm italic leading-relaxed">
+                  {/* Customer Review - Inline Design */}
+                  <div className="mt-8 bg-brush-orange/10 backdrop-blur-sm rounded-xl p-4 border border-brush-orange/20">
+                    <div className="flex items-center mb-3">
+                      <div className="bg-brush-orange text-chalkboard text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                        {t("features.specialty")}
+                      </div>
+                      <div className="flex text-brush-orange ml-auto">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-chalk-white/90 font-romanian text-sm italic leading-relaxed">
                       "{reviewTexts[index]}"
                     </p>
-                    <div className="flex text-brush-orange mt-2">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                ))}
-              </div>
-            </div>
+                  </div>
           </div>
               </div>
             ))}
