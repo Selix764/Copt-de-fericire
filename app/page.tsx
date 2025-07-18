@@ -381,7 +381,7 @@ export default function HomePage() {
                     <img
                       src={product.image}
                       alt={product.alt}
-                      className="w-full h-64 md:h-80 lg:h-[500px] object-cover transition-all duration-700 group-hover:scale-110"
+                      className="w-full h-80 md:h-96 lg:h-[500px] object-cover transition-all duration-700 group-hover:scale-110"
                       loading="lazy"
                       decoding="async"
                       onWheel={(e) => e.preventDefault()}

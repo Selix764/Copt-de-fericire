@@ -16,6 +16,13 @@
     min-width: 320px; /* Minimum width for mobile */
   }
 
+  /* Add bottom padding on mobile for bottom navigation */
+  @media (max-width: 1024px) {
+    body {
+      padding-bottom: 80px; /* Space for mobile bottom nav */
+    }
+  }
+
   /* Hide scrollbars globally */
   * {
     box-sizing: border-box;

@@ -3,18 +3,17 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, Home, Utensils, MessageCircle, Globe } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const { t, language, toggleLanguage } = useLanguage()
 
   const navigation = [
-    { name: t("story.header"), href: "#about" },
-    { name: t("menu.header"), href: "#menu" },
-    { name: t("contact.header"), href: "#contact" },
+    { name: t("story.header"), href: "#about", icon: Home },
+    { name: t("menu.header"), href: "#menu", icon: Utensils },
+    { name: t("contact.header"), href: "#contact", icon: MessageCircle },
   ]
 
   useEffect(() => {
@@ -86,62 +85,44 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden text-chalk-white p-3 rounded-lg hover:bg-chalk-white/10 hover:text-brush-orange transition-colors duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile - Language Toggle and Phone */}
+          <div className="lg:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleLanguage}
+              className="text-chalk-white hover:text-brush-orange p-2 rounded-lg transition-colors duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Toggle language"
+            >
+              <Globe className="w-5 h-5" />
+            </button>
+            <Link
+              href="tel:+40721234567"
+              className="text-chalk-white hover:text-brush-orange p-2 rounded-lg transition-colors duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Call restaurant"
+            >
+              <Phone className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
+              </nav>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-chalkboard/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-6 shadow-xl border border-chalk-white/20">
-            <div className="flex flex-col space-y-6">
-              {navigation.map((item) => (
+        {/* Mobile Bottom Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-chalkboard/95 backdrop-blur-md border-t border-chalk-white/20">
+          <div className="flex items-center justify-around py-2 px-4">
+            {navigation.map((item) => {
+              const IconComponent = item.icon;
+              return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-chalk-white hover:text-brush-orange transition-colors duration-300 font-body font-medium px-6 py-3 text-center uppercase tracking-wider min-h-[48px] flex items-center justify-center"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="flex flex-col items-center justify-center text-chalk-white/70 hover:text-brush-orange transition-colors duration-300 min-h-[60px] min-w-[60px] group"
                 >
-                  {item.name}
+                  <IconComponent className="w-6 h-6 mb-1 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-xs font-body font-medium">{item.name}</span>
                 </Link>
-              ))}
-              <div className="flex flex-col space-y-4 px-6 pt-4 border-t border-chalk-white/20">
-                {/* Language Toggle Button for Mobile */}
-                <button
-                  onClick={() => {
-                    toggleLanguage();
-                    setIsMenuOpen(false);
-                  }}
-                  className="bg-brush-orange/20 hover:bg-brush-orange text-chalk-white hover:text-chalkboard py-3 px-6 rounded-2xl font-body font-medium text-sm text-center uppercase tracking-wider transition-all duration-300 min-h-[48px]"
-                >
-                  {language === 'en' ? 'RO' : 'EN'}
-                </button>
-                
-                <Link
-                  href="tel:+40721234567"
-                  className="flex items-center justify-center text-chalk-white hover:text-brush-orange transition-colors duration-300 font-medium py-3 min-h-[48px]"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span className="font-body">{t("contact.phone")}</span>
-                </Link>
-                <Link
-                  href="#contact"
-                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-2xl font-poppins font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300 min-h-[48px] flex items-center justify-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t("contact.reserveTable")}
-                </Link>
-              </div>
-            </div>
+              );
+            })}
           </div>
-        )}
-      </nav>
-    </header>
-  )
-}
+        </div>
+      </header>
+    )
+  }
