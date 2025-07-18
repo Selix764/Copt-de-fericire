@@ -21,11 +21,11 @@ export default function HomePage() {
   // Most Popular Menu Items
   const products = [
     {
-      id: 'cheesecake',
-      title: t("products.cheesecake.title"),
-      description: t("products.cheesecake.description"),
-      image: "/images/cheesecake-popular.jpg",
-      alt: "Homemade Cheesecake"
+      id: 'deluxePotato',
+      title: t("products.deluxePotato.title"),
+      description: t("products.deluxePotato.description"),
+      image: "/images/baked-potato-deluxe-popular.jpg",
+      alt: "Baked Potato with Chicken, Cheese, Valerian and Sour Cream"
     },
     {
       id: 'meatyPotato',
