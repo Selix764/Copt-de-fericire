@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Star, Clock, MapPin, Phone, Mail, ChefHat, Users, Award, Heart, Facebook, Instagram, Twitter } from "lucide-react"
+import { Star, Clock, MapPin, Phone, Mail, ChefHat, Users, Award, Heart, Facebook, Instagram } from "lucide-react"
 import { useScrollAnimation, getAnimationClass } from "./hooks/useScrollAnimation"
 import { useLanguage } from "./contexts/LanguageContext"
 
@@ -80,8 +80,8 @@ export default function HomePage() {
     {
       name: "Copt de Fericire",
       address: "Splaiul Independenței 2K, București 030099",
-      coordinates: { lat: 44.4268, lng: 26.1025 }, // Splaiul Independenței coordinates
-      googleMapsUrl: "https://www.google.com/maps/place/Splaiul+Independenței+2K,+București+030099,+Romania"
+      coordinates: { lat: 44.4275, lng: 26.0985 }, // Updated Splaiul Independenței coordinates
+      googleMapsUrl: "https://www.google.com/maps/place/Splaiul+Independen%C8%9Bei+2K,+Bucure%C8%99ti+030099,+Romania"
     }
   ]
 
@@ -138,19 +138,19 @@ export default function HomePage() {
         <div className="relative z-10 container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div ref={heroAnimation.ref} className={getAnimationClass(heroAnimation.isVisible, "fadeLeft")}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-6 leading-tight tracking-wider">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-montserrat font-bold text-chalk-white mb-6 leading-tight tracking-wider">
                 <span className="font-section-label text-brush-orange">{t("hero.restaurant")}</span>
                 <span className="block font-section-label  font-bold">COPT DE FERICIRE</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
+              <p className="text-lg md:text-xl lg:text-2xl text-chalk-white/80 mb-8 leading-relaxed max-w-3xl font-body">
                 {t("hero.subtitle")}
               </p>
               
               <div className="flex justify-start mb-12">
               <Link
                 href="#menu"
-                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
+                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 md:px-8 md:py-4 rounded-2xl font-poppins font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider whitespace-nowrap min-h-[48px] flex items-center justify-center"
               >
                   {t("menu.viewFullMenu")}
               </Link>
@@ -172,7 +172,7 @@ export default function HomePage() {
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("story.header")}
               </h2>
               <p className="text-chalk-white/80 text-lg mb-6 leading-relaxed font-romanian">
@@ -256,11 +256,11 @@ export default function HomePage() {
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
                 {t("products.title")}
             </h2>
               
-              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-body leading-relaxed">
+              <p className="text-chalk-white/70 text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto font-body leading-relaxed">
                 {t("products.subtitle")}
               </p>
               
@@ -287,7 +287,7 @@ export default function HomePage() {
                     <img
                       src={product.image}
                       alt={product.alt}
-                      className="w-full h-[500px] object-cover transition-all duration-700 group-hover:scale-110"
+                      className="w-full h-64 md:h-80 lg:h-[500px] object-cover transition-all duration-700 group-hover:scale-110"
                       loading="lazy"
                       decoding="async"
                     />
@@ -307,7 +307,7 @@ export default function HomePage() {
 
                 {/* Content Card */}
                 <div className="lg:w-1/2 relative">
-                  <div className="bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-12 border border-chalk-white/20 group-hover:bg-chalk-white/15 group-hover:border-brush-orange/30 transition-all duration-500 shadow-2xl">
+                  <div className="bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-12 border border-chalk-white/20 group-hover:bg-chalk-white/15 group-hover:border-brush-orange/30 transition-all duration-500 shadow-2xl exact-height">
                     {/* Category Badge */}
                     <div className="inline-flex items-center bg-brush-orange/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
                       <span className="text-brush-orange font-romanian font-bold text-sm uppercase tracking-wider">
@@ -316,7 +316,7 @@ export default function HomePage() {
           </div>
 
                     {/* Title */}
-                    <h3 className="text-4xl md:text-5xl font-banner text-chalk-white mb-6 group-hover:text-brush-orange transition-colors duration-500">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-banner text-chalk-white mb-6 group-hover:text-brush-orange transition-colors duration-500">
                       {product.title}
                     </h3>
                     
@@ -329,7 +329,7 @@ export default function HomePage() {
                     </p>
                     
                     {/* Features */}
-                    <div className="flex flex-wrap gap-3 mb-8">
+                    <div className="flex flex-wrap gap-3 mb-8 exact-height">
                       <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-romanian backdrop-blur-sm">
                         {t("features.freshPrepared")}
                       </span>
@@ -343,7 +343,7 @@ export default function HomePage() {
                   </div>
                   
                   {/* Floating Quote */}
-                  <div className="absolute -top-8 -right-8 bg-chalk-white rounded-2xl p-6 shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500 opacity-90 group-hover:opacity-100 max-w-sm">
+                  <div className="absolute -top-8 -right-8 bg-chalk-white rounded-2xl p-6 shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500 opacity-90 group-hover:opacity-100 max-w-sm exact-height">
                     <p className="text-chalkboard font-romanian text-sm italic leading-relaxed">
                       "{reviewTexts[index]}"
                     </p>
@@ -383,11 +383,11 @@ export default function HomePage() {
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold text-chalk-white mb-8 leading-tight">
                 {t("menu.subtitle")}
             </h2>
               
-              <p className="text-chalk-white/70 text-xl md:text-2xl max-w-4xl mx-auto font-romanian leading-relaxed">
+              <p className="text-chalk-white/70 text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto font-romanian leading-relaxed">
                 {t("menu.description")}
               </p>
               
@@ -407,33 +407,35 @@ export default function HomePage() {
               
               {/* Desktop PDF Viewer */}
               <div className="hidden md:block bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
-                <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-chalk-white">
+                <div className="iframe-container w-full h-[600px] rounded-2xl bg-chalk-white">
                 <iframe
                   src="/api/menu-pdf"
-                    className="w-full h-full rounded-2xl"
+                    className="w-full h-full rounded-2xl no-scrollbar"
                   title="Restaurant Menu PDF"
                   style={{
-                      minHeight: '600px',
+                      border: 'none',
                       background: '#FFFFFF'
                     }}
+                    scrolling="no"
                   />
                 </div>
               </div>
 
               {/* Mobile PDF Viewer - Google Drive Embed for Mobile */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
-                <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
+                <div className="iframe-container w-full h-[400px] sm:h-[500px] rounded-2xl bg-chalk-white">
                   <iframe
                     src="https://drive.google.com/file/d/1syb-SgovlRgSXTXgslq72fWAvQ7eOUxC/preview"
-                    className="w-full h-full rounded-2xl border-0"
+                    className="w-full h-full rounded-2xl border-0 no-scrollbar"
                     title="Restaurant Menu PDF"
                     style={{
-                      minHeight: '100vh',
+                      border: 'none',
                       background: '#FFFFFF'
                     }}
                     allow="autoplay"
                     loading="eager"
                     frameBorder="0"
+                    scrolling="no"
                   />
                 </div>
               </div>
@@ -469,9 +471,9 @@ export default function HomePage() {
                 </div>
                 
                 {/* Interactive Google Maps */}
-                <div className="relative z-10 w-full h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-chalk-white/20">
+                <div className="iframe-container relative z-10 w-full h-96 rounded-2xl shadow-2xl border-2 border-chalk-white/20">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.123456789!2d26.100550!3d44.426800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzM2LjUiTiAyNsKwMDYnMDIuMCJF!5e0!3m2!1sen!2sro!4v1732384695000!5m2!1sen!2sro&q=Splaiul+Independenței+2K,+București+030099"
+                    src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=Splaiul%20Independen%C8%9Bei%202K,%20Bucure%C8%99ti%20030099,%20Romania&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -480,6 +482,7 @@ export default function HomePage() {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Copt de Fericire Restaurant - Splaiul Independenței 2K, București 030099"
                     className="rounded-2xl no-scrollbar"
+                    scrolling="no"
                   ></iframe>
                   
                   {/* Overlay corner decorations */}
@@ -508,7 +511,7 @@ export default function HomePage() {
                   </span>
                   <div className="w-16 h-px bg-brush-orange ml-4"></div>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-8 leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold mb-8 leading-tight">
                   {t("locations.subtitle")}
                 </h2>
                 
@@ -577,10 +580,10 @@ export default function HomePage() {
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-chalk-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-chalk-white mb-6">
                 {t("social.title")}
             </h2>
-              <p className="text-chalk-white/80 text-xl max-w-3xl mx-auto font-romanian">
+              <p className="text-chalk-white/80 text-lg md:text-xl max-w-3xl mx-auto font-romanian">
                 {t("social.description")}
               </p>
             </div>
@@ -588,11 +591,11 @@ export default function HomePage() {
 
           {/* Enhanced Image Grid */}
           <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 1)}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-full exact-height">
               {socialImages.map((image, index) => (
-                <div key={index} className={`${getAnimationClass(socialAnimation.isVisible, "scale", index + 1)} group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl`}>
+                <div key={index} className={`${getAnimationClass(socialAnimation.isVisible, "scale", index + 1)} group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl exact-height`}>
                   {/* Image with fallback */}
-                  <div className="relative w-full h-64">
+                  <div className="relative w-full h-48 md:h-64 exact-height">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -615,14 +618,14 @@ export default function HomePage() {
             {/* View More Button */}
             <div className="text-center mt-8">
               <a
-                href="https://www.instagram.com/copt_de_fericire/"
+                href="https://www.instagram.com/copt_de_fericire?igsh=cHFqeTN0eGdkcGYz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-gradient-to-r from-brush-orange to-deep-orange hover:from-deep-orange hover:to-brush-orange text-chalk-white px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-brush-orange to-deep-orange hover:from-deep-orange hover:to-brush-orange text-chalk-white px-6 py-4 md:px-8 md:py-4 rounded-2xl font-poppins font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap min-h-[48px]"
               >
-                <Instagram className="w-6 h-6 mr-3" />
-                {t("social.followInstagram")}
-                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Instagram className="w-5 h-5 md:w-6 md:h-6 mr-3 flex-shrink-0" />
+                <span className="mx-2">{t("social.followInstagram")}</span>
+                <svg className="w-4 h-4 md:w-5 md:h-5 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
@@ -657,7 +660,7 @@ export default function HomePage() {
                 </span>
                 <div className="w-16 h-px bg-brush-orange ml-4"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-white mb-6">
                 {t("contact.header")}
             </h2>
             </div>
@@ -666,7 +669,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Details */}
             <div className={getAnimationClass(contactAnimation.isVisible, "fadeLeft", 1)}>
-              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 exact-height">
                 {/* Decorative Header */}
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 bg-brush-orange rounded-full flex items-center justify-center mr-4">
@@ -675,7 +678,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-poppins font-bold text-white">{t("contact.restaurantDetails")}</h3>
                 </div>
                 
-                <div className="space-y-6">
+                <div className="space-y-6 exact-height">
                   <div className="border-l-4 border-brush-orange pl-6">
                     <h4 className="text-lg font-poppins font-bold text-white mb-2">COPT DE FERICIRE</h4>
                     <p className="text-white/80 font-romanian italic text-sm">{t("footer.tagline")}</p>
@@ -716,14 +719,14 @@ export default function HomePage() {
 
             {/* Contact Form */}
             <div className={getAnimationClass(contactAnimation.isVisible, "fadeRight", 1)}>
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-4 exact-height">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.firstName")}</label>
                   <input
                     type="text"
                       placeholder="Alexandru"
-                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
+                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body min-h-[48px] no-scrollbar"
                   />
                   </div>
                   <div>
@@ -731,31 +734,31 @@ export default function HomePage() {
                   <input
                       type="text"
                       placeholder="Popescu"
-                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
+                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body min-h-[48px] no-scrollbar"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.email")}</label>
                     <input
                       type="email"
                       placeholder="alexandru@example.com"
-                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
+                      className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body min-h-[48px] no-scrollbar"
                     />
                   </div>
                   <div>
                     <label className="block text-white text-sm font-poppins font-medium mb-2">{t("contact.phoneNumber")}</label>
                     <div className="flex">
-                      <div className="flex items-center bg-black/30 backdrop-blur-sm px-3 py-3 rounded-l-xl border border-white/20 border-r-0">
+                      <div className="flex items-center bg-black/30 backdrop-blur-sm px-3 py-3 rounded-l-xl border border-white/20 border-r-0 min-h-[48px]">
                         <span className="text-xs mr-2">🇷🇴</span>
                         <span className="text-white text-sm">▼</span>
                       </div>
                   <input
                         type="tel"
                         placeholder="+40 721 234 567"
-                        className="flex-1 bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-r-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body"
+                        className="flex-1 bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-r-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent font-body min-h-[48px] no-scrollbar"
                       />
                     </div>
                   </div>
@@ -766,13 +769,13 @@ export default function HomePage() {
                 <textarea
                     rows={6}
                     placeholder={t("contact.messagePlaceholder")}
-                    className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent resize-none font-body"
+                    className="w-full bg-black/30 backdrop-blur-sm text-white placeholder-white/50 px-4 py-3 rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-brush-orange focus:border-transparent resize-none font-body no-scrollbar"
                 ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-200 hover:bg-orange-300 text-orange-800 py-4 rounded-xl font-poppins font-bold text-lg transition-all duration-300 uppercase tracking-wider shadow-lg"
+                  className="w-full bg-orange-200 hover:bg-orange-300 text-orange-800 py-4 md:py-5 rounded-xl font-poppins font-bold text-base md:text-lg transition-all duration-300 uppercase tracking-wider shadow-lg min-h-[48px] flex items-center justify-center whitespace-nowrap"
                 >
                   {t("contact.sendMessage")}
                 </button>
@@ -799,17 +802,24 @@ export default function HomePage() {
                               <div className="mb-6">
                   <p className="text-chalk-white/60 text-sm font-body mb-4">{t("footer.followUs")}</p>
                   <div className="flex space-x-3">
-                    <div className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
-                      <svg className="w-4 h-4 text-chalkboard" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                      </svg>
-                    </div>
-                    <div className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
+                    <a 
+                      href="https://www.facebook.com/share/1AyJAsg6TP/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer"
+                      aria-label="Follow us on Facebook"
+                    >
                       <Facebook className="w-4 h-4 text-chalkboard" />
-                    </div>
-                    <div className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/copt_de_fericire?igsh=cHFqeTN0eGdkcGYz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer"
+                      aria-label="Follow us on Instagram"
+                    >
                       <Instagram className="w-4 h-4 text-chalkboard" />
-                    </div>
+                    </a>
                   </div>
                 </div>
             </div>
@@ -830,15 +840,15 @@ export default function HomePage() {
             {/* Newsletter Column */}
             <div>
               <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.newsletter")}</h4>
-              <div className="flex">
+              <div className="flex flex-col gap-3">
                 <input
                   type="email"
                   placeholder={t("footer.enterEmail")}
-                  className="flex-1 bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-l-2xl border border-chalk-white/30 focus:outline-none focus:border-brush-orange font-body"
+                  className="w-full bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-2xl border border-chalk-white/30 focus:outline-none focus:border-brush-orange font-body min-h-[48px]"
                 />
-                <button className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-r-2xl font-poppins font-semibold transition-colors flex items-center">
-                  {t("footer.subscribe")}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="w-full bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-2xl font-poppins font-semibold transition-colors flex items-center justify-center whitespace-nowrap min-h-[48px] text-sm md:text-base">
+                  <span className="mr-2">{t("footer.subscribe")}</span>
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

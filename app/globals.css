@@ -5,34 +5,135 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
 
   body {
     font-family: var(--font-open-sans);
     background-color: #F6F2EC;
     color: #3A2D2D;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-width: 320px; /* Minimum width for mobile */
   }
 
-  /* Only hide scrollbars in specific contexts where needed */
-  /* Keep PDF iframe scrolling functional but hide scrollbars visually */
+  /* Hide scrollbars globally */
+  * {
+    box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  /* Prevent horizontal scrolling on all elements */
+  *,
+  *::before,
+  *::after {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ensure images are responsive */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  /* Mobile-friendly form elements */
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px; /* Prevent zoom on iOS */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+  }
+
+  /* Specific button improvements for custom buttons */
+  .button-no-deform {
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; /* Minimum touch target */
+  }
+
+  /* Prevent button text deformation for custom buttons */
+  .button-no-deform span,
+  .button-no-deform > * {
+    flex-shrink: 0;
+  }
+
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+    button,
+    a,
+    input,
+    textarea {
+      min-height: 44px; /* iOS recommended touch target */
+      min-width: 44px;
+    }
+  }
+
+  /* Hide scrollbars completely for embedded content */
   iframe {
-    scrollbar-width: thin; /* Firefox - keep thin scrollbar for functionality */
-    -ms-overflow-style: scrollbar; /* Internet Explorer and Edge - keep scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    overflow: hidden;
   }
 
-  /* Only hide webkit scrollbars for iframe to maintain functionality */
+  /* Hide webkit scrollbars completely for embedded content */
   iframe::-webkit-scrollbar {
-    width: 8px;
-    background: transparent;
+    display: none; /* Chrome, Safari, Opera */
   }
 
-  iframe::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.3);
-    border-radius: 4px;
+  /* Hide scrollbars for specific containers */
+  .no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    overflow: hidden;
   }
 
-  iframe::-webkit-scrollbar-thumb:hover {
-    background: rgba(0,0,0,0.5);
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  /* Ensure iframe content fits container exactly */
+  .iframe-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .iframe-container iframe {
+    border: none;
+    overflow: hidden;
+    scrolling: no;
+  }
+
+  /* Exact height containers */
+  .exact-height {
+    height: fit-content;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  /* Remove unwanted scrollbars from all content containers */
+  .content-container {
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .content-container::-webkit-scrollbar {
+    display: none;
   }
 
   /* Prevent horizontal scrolling on sections only - keep vertical scrolling intact */
@@ -90,11 +191,23 @@
   }
 
   .section-padding {
-    @apply py-4 md:py-6;
+    @apply py-6 md:py-8 lg:py-12;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .section-padding {
+      @apply py-4;
+    }
+    
+    .container-custom {
+      @apply px-3;
+    }
   }
 
   .organic-bg {

@@ -61,6 +61,19 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   title: "Copt de Fericire - Authentic Romanian Restaurant",
   description: "Experience authentic Romanian culinary traditions in a warm and welcoming atmosphere. Traditional dishes prepared with passion and respect for recipes passed down through generations.",
+  viewport: "width=device-width, initial-scale=1",
+  metadataBase: new URL('https://coptdefericire.ro'),
+  openGraph: {
+    title: "Copt de Fericire - Authentic Romanian Restaurant",
+    description: "Experience authentic Romanian culinary traditions in a warm and welcoming atmosphere.",
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "ro_RO",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -70,6 +83,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={`${montserrat.variable} ${poppins.variable} ${permanentMarker.variable} ${rockSalt.variable} ${openSans.variable} ${bangers.variable} ${notoSans.variable}`}>
         <LanguageProvider>
           <ClientLayout>

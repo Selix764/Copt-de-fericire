@@ -44,9 +44,9 @@ export default function Header() {
               <Image
                 src="/placeholder-logo.png"
                 alt="Copt de Fericire Logo"
-                width={180}
-                height={90}
-                className="navbar-logo-image"
+                width={140}
+                height={70}
+                className="navbar-logo-image w-auto h-16 md:h-20 lg:h-24"
                 priority
               />
             </Link>
@@ -88,8 +88,9 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden text-chalk-white p-2 rounded-lg hover:bg-chalk-white/10 hover:text-brush-orange transition-colors duration-300"
+            className="lg:hidden text-chalk-white p-3 rounded-lg hover:bg-chalk-white/10 hover:text-brush-orange transition-colors duration-300 min-h-[48px] min-w-[48px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -97,37 +98,41 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-chalkboard/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-4 shadow-xl border border-chalk-white/20">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden bg-chalkboard/95 backdrop-blur-md rounded-lg mx-4 mb-4 py-6 shadow-xl border border-chalk-white/20">
+            <div className="flex flex-col space-y-6">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-chalk-white hover:text-brush-orange transition-colors duration-300 font-body font-medium px-6 py-2 text-center uppercase tracking-wider"
+                  className="text-chalk-white hover:text-brush-orange transition-colors duration-300 font-body font-medium px-6 py-3 text-center uppercase tracking-wider min-h-[48px] flex items-center justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-3 px-6 pt-4 border-t border-chalk-white/20">
+              <div className="flex flex-col space-y-4 px-6 pt-4 border-t border-chalk-white/20">
                 {/* Language Toggle Button for Mobile */}
                 <button
-                  onClick={toggleLanguage}
-                  className="bg-brush-orange/20 hover:bg-brush-orange text-chalk-white hover:text-chalkboard py-3 px-6 rounded-2xl font-body font-medium text-sm text-center uppercase tracking-wider transition-all duration-300"
+                  onClick={() => {
+                    toggleLanguage();
+                    setIsMenuOpen(false);
+                  }}
+                  className="bg-brush-orange/20 hover:bg-brush-orange text-chalk-white hover:text-chalkboard py-3 px-6 rounded-2xl font-body font-medium text-sm text-center uppercase tracking-wider transition-all duration-300 min-h-[48px]"
                 >
                   {language === 'en' ? 'RO' : 'EN'}
                 </button>
                 
                 <Link
                   href="tel:+40721234567"
-                  className="flex items-center justify-center text-chalk-white hover:text-brush-orange transition-colors duration-300 font-medium py-2"
+                  className="flex items-center justify-center text-chalk-white hover:text-brush-orange transition-colors duration-300 font-medium py-3 min-h-[48px]"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   <span className="font-body">{t("contact.phone")}</span>
                 </Link>
                 <Link
                   href="#contact"
-                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-2xl font-poppins font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300"
+                  className="bg-brush-orange hover:bg-gold-accent text-chalkboard py-3 px-6 rounded-2xl font-poppins font-semibold text-sm text-center uppercase tracking-wider transition-all duration-300 min-h-[48px] flex items-center justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t("contact.reserveTable")}
