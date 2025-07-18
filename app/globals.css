@@ -32,6 +32,31 @@
     overflow-x: hidden;
   }
 
+  /* Remove scrollbars from PDF containers and other problematic areas */
+  iframe {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+  }
+
+  iframe::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  /* Fix container overflow issues */
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+  
+  /* Prevent any unwanted scrollbars */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .font-heading {
     font-family: var(--font-montserrat);
   }

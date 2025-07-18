@@ -79,9 +79,9 @@ export default function HomePage() {
   const locations = [
     {
       name: "Copt de Fericire",
-      address: "Splaiul Independenței 2K, București",
+      address: "Splaiul Independenței 2K, București 030099",
       coordinates: { lat: 44.4268, lng: 26.1025 }, // Splaiul Independenței coordinates
-      googleMapsUrl: "https://www.google.com/maps/place/Splaiul+Independenței+2K,+București,+Romania"
+      googleMapsUrl: "https://www.google.com/maps/place/Splaiul+Independenței+2K,+București+030099,+Romania"
     }
   ]
 
@@ -413,8 +413,8 @@ export default function HomePage() {
               <div className="hidden md:block bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-chalk-white">
                 <iframe
-                  src="/api/menu-pdf"
-                    className="w-full h-full rounded-2xl"
+                  src="/menu.pdf"
+                    className="w-full h-full rounded-2xl no-scrollbar"
                   title="Restaurant Menu PDF"
                   style={{
                       minHeight: '600px',
@@ -424,15 +424,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Mobile PDF Viewer - Google Drive Embed for Mobile */}
+              {/* Mobile PDF Viewer - Direct PDF for Mobile */}
               <div className="md:hidden bg-chalk-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-chalk-white/20">
-                <div className="w-full h-screen rounded-2xl overflow-hidden bg-chalk-white">
+                <div className="w-full h-[80vh] rounded-2xl overflow-hidden bg-chalk-white">
                   <iframe
-                    src="https://drive.google.com/file/d/1syb-SgovlRgSXTXgslq72fWAvQ7eOUxC/preview"
-                    className="w-full h-full rounded-2xl border-0"
+                    src="/menu.pdf"
+                    className="w-full h-full rounded-2xl border-0 no-scrollbar"
                     title="Restaurant Menu PDF"
                     style={{
-                      minHeight: '100vh',
+                      minHeight: '80vh',
                       background: '#FFFFFF'
                     }}
                     allow="autoplay"
@@ -475,15 +475,15 @@ export default function HomePage() {
                 {/* Interactive Google Maps */}
                 <div className="relative z-10 w-full h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-chalk-white/20">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.123456789!2d26.100550!3d44.426800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzM2LjUiTiAyNsKwMDYnMDIuMCJF!5e0!3m2!1sen!2sro!4v1732384695000!5m2!1sen!2sro&q=Splaiul+Independenței+2K,+București"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.123456789!2d26.100550!3d44.426800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzM2LjUiTiAyNsKwMDYnMDIuMCJF!5e0!3m2!1sen!2sro!4v1732384695000!5m2!1sen!2sro&q=Splaiul+Independenței+2K,+București+030099"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Copt de Fericire Restaurant - Splaiul Independenței 2K"
-                    className="rounded-2xl"
+                    title="Copt de Fericire Restaurant - Splaiul Independenței 2K, București 030099"
+                    className="rounded-2xl no-scrollbar"
                   ></iframe>
                   
                   {/* Overlay corner decorations */}
@@ -829,16 +829,7 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Menu Column */}
-            <div>
-              <h4 className="text-chalk-white font-poppins font-semibold mb-4">{t("footer.specialties")}</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("products.cheesecake.title")}</a></li>
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("products.meatyPotato.title")}</a></li>
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("products.veganPotato.title")}</a></li>
-                <li><a href="#" className="text-chalk-white/70 hover:text-chalk-white transition-colors font-body">{t("menu.items.cozonac")}</a></li>
-              </ul>
-            </div>
+            
 
             {/* Newsletter Column */}
             <div>
