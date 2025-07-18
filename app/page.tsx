@@ -643,7 +643,7 @@ export default function HomePage() {
                   {locations.map((location, index) => (
                     <div key={index} className={getAnimationClass(locationsAnimation.isVisible, "fadeUp", index + 1)}>
                       <div className="bg-chalk-white/10 backdrop-blur-xl rounded-2xl p-6 border border-chalk-white/20 hover:bg-chalk-white/15 hover:border-brush-orange/30 transition-all duration-300 group">
-                        <div className="flex items-start justify-between">
+                        <div className="flex items-start">
                           <div className="flex-1">
                             <h3 className="text-xl font-poppins font-bold text-chalk-white mb-2 group-hover:text-brush-orange transition-colors">
                               {location.name}
@@ -654,37 +654,13 @@ export default function HomePage() {
                               <span className="font-romanian">București, România</span>
                             </div>
                           </div>
-                          <a
-                            href={location.googleMapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-brush-orange hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                            title="Deschide în Google Maps"
-                          >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </a>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Call to action */}
-                <div className="bg-gradient-to-r from-brush-orange/20 to-deep-orange/20 backdrop-blur-sm rounded-2xl p-6 border border-brush-orange/30">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="text-chalk-white font-poppins font-bold text-lg mb-2">{t("locations.findNearest")}</h4>
-                      <p className="text-chalk-white/70 font-romanian text-sm">{t("locations.mapInstructions")}</p>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <a href="tel:+40721234567" className="bg-brush-orange hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110">
-                        <Phone className="w-5 h-5" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
