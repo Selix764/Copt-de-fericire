@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    width: 100%;
     overflow-x: hidden;
   }
 
@@ -12,6 +13,7 @@
     font-family: var(--font-open-sans);
     background-color: #F6F2EC;
     color: #3A2D2D;
+    width: 100%;
     overflow-x: hidden;
     max-width: 100vw;
   }
@@ -57,23 +59,11 @@
     display: none;
   }
 
-  /* Specific fixes for sections with unwanted scrollbars */
-  #social {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-  }
-
-  #social .grid {
-    overflow-x: hidden !important;
-  }
-
-  /* Fix for signature dishes showcase section */
-  section:has(.space-y-24) {
-    overflow-x: hidden !important;
-  }
-
-  .space-y-24 {
-    overflow-x: hidden !important;
+  /* Ensure all containers stay within viewport */
+  .container {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
   .font-heading {

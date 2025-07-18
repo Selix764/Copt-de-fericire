@@ -240,8 +240,7 @@ export default function HomePage() {
       </section>
 
       {/* Signature Dishes Showcase */}
-      <section className="py-32 bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden"
-        style={{ overflowX: 'hidden', overflowY: 'visible' }}>
+      <section className="py-32 bg-gradient-to-br from-chalkboard via-chalkboard/95 to-chalkboard relative overflow-hidden">
         {/* Artistic Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brush-orange/10 rounded-full blur-3xl"></div>
@@ -249,7 +248,7 @@ export default function HomePage() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-deep-orange/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           {/* Section Header */}
           <div ref={productsAnimation.ref} className={getAnimationClass(productsAnimation.isVisible, "fadeUp")}>
             <div className="text-center mb-20">
@@ -280,7 +279,7 @@ export default function HomePage() {
           </div>
 
           {/* Dishes Showcase */}
-          <div className="space-y-24" style={{ overflowX: 'hidden' }}>
+          <div className="space-y-24 w-full max-w-full">
             {products.map((product, index) => (
               <div
                 key={product.id}
@@ -571,9 +570,8 @@ export default function HomePage() {
       </section>
 
       {/* Social Media Section */}
-      <section id="social" className="py-20 bg-chalkboard" 
-        style={{ overflowX: 'hidden', overflowY: 'visible' }}>
-        <div className="container mx-auto px-4 lg:px-8" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+      <section id="social" className="py-20 bg-chalkboard">
+        <div className="container mx-auto px-4 lg:px-8">
           <div ref={socialAnimation.ref} className={getAnimationClass(socialAnimation.isVisible, "fadeUp")}>
           <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center mb-6">
@@ -593,10 +591,8 @@ export default function HomePage() {
           </div>
 
           {/* Enhanced Image Grid */}
-          <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 1)} 
-            style={{ overflowX: 'hidden' }}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6" 
-              style={{ overflowX: 'hidden' }}>
+          <div className={getAnimationClass(socialAnimation.isVisible, "fadeUp", 1)}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-full">
               {socialImages.map((image, index) => (
                 <div key={index} className={`${getAnimationClass(socialAnimation.isVisible, "scale", index + 1)} group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl`}>
                   {/* Image with fallback */}
