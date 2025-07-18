@@ -125,6 +125,18 @@ const translations = {
     "contact.sendMessage": "Trimite Mesajul",
     "contact.messagePlaceholder": "Scrie mesajul tău...",
 
+    // Reviews and Feature Badges
+    "reviews.review1": "Hitul preferat al clienților – de neratat!",
+    "reviews.review2": "Alegerea nr. 1 în farfuriile oaspeților noștri!",
+    "reviews.review3": "Vedeta meniului – gustul care cucerește pe toată lumea!",
+    "features.specialty": "Specialitate",
+    "features.freshPrepared": "Preparat proaspăt",
+    "features.localIngredients": "Ingrediente locale",
+    "features.traditionalRecipe": "Rețetă tradițională",
+    "testimonials.maria": "Cea mai bună mâncare românească din oraș! Sarmalele sunt ca la mama acasă.",
+    "testimonials.alexandru": "Atmosfera caldă și mâncarea delicioasă. Recomand cu încredere!",
+    "testimonials.elena": "Papanașii sunt excepționali! Un restaurant autentic românesc.",
+
     // Footer
     "footer.tagline": "Unde fiecare masă devine o sărbătoare a tradițiilor românești",
     "footer.followUs": "Urmărește-ne",
@@ -255,6 +267,18 @@ const translations = {
     "contact.message": "Message",
     "contact.sendMessage": "Send Message",
     "contact.messagePlaceholder": "Write your message...",
+
+    // Reviews and Feature Badges
+    "reviews.review1": "Customer favorite hit – not to be missed!",
+    "reviews.review2": "The #1 choice on our guests' plates!",
+    "reviews.review3": "Menu star – the taste that wins everyone over!",
+    "features.specialty": "Specialty",
+    "features.freshPrepared": "Fresh Prepared",
+    "features.localIngredients": "Local Ingredients",
+    "features.traditionalRecipe": "Traditional Recipe",
+    "testimonials.maria": "The best Romanian food in town! The sarmale are just like mom's.",
+    "testimonials.alexandru": "Warm atmosphere and delicious food. I recommend with confidence!",
+    "testimonials.elena": "The papanași are exceptional! An authentic Romanian restaurant.",
 
     // Footer
     "footer.tagline": "Where every meal becomes a celebration of Romanian traditions",

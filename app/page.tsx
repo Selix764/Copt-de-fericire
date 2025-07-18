@@ -45,9 +45,9 @@ export default function HomePage() {
 
   // Review texts for each dish
   const reviewTexts = [
-    "Hitul preferat al clienților – de neratat!",
-    "Alegerea nr. 1 în farfuriile oaspeților noștri!",
-    "Vedeta meniului – gustul care cucerește pe toată lumea!"
+    t("reviews.review1"),
+    t("reviews.review2"),
+    t("reviews.review3")
   ]
 
   // No menu categories - removed desserts section
@@ -56,21 +56,21 @@ export default function HomePage() {
     {
       name: "Maria Popescu",
       rating: 5,
-      text: "Cea mai bună mâncare românească din oraș! Sarmalele sunt ca la mama acasă.",
+      text: t("testimonials.maria"),
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face",
       isRomanian: true
     },
     {
       name: "Alexandru Ionescu", 
       rating: 5,
-      text: "Atmosfera caldă și mâncarea delicioasă. Recomand cu încredere!",
+      text: t("testimonials.alexandru"),
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face",
       isRomanian: true
     },
     {
       name: "Elena Radu",
       rating: 5,
-      text: "Papanașii sunt excepționali! Un restaurant autentic românesc.",
+      text: t("testimonials.elena"),
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
       isRomanian: true
     }
@@ -121,16 +121,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Language Toggle Button */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={toggleLanguage}
-          className="bg-brush-orange text-chalkboard px-4 py-2 rounded-2xl font-poppins font-bold text-sm uppercase tracking-wider shadow-lg hover:bg-gold-accent transition-colors duration-300"
-        >
-          {language === 'en' ? 'RO' : 'EN'}
-        </button>
-      </div>
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-chalkboard overflow-hidden -mt-20 pt-20">
         {/* Background Image */}
@@ -161,18 +151,12 @@ export default function HomePage() {
             </div>
             
             <div className={getAnimationClass(heroAnimation.isVisible, "fadeUp", 2)}>
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <div className="flex justify-center mb-12">
               <Link
                 href="#menu"
                   className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-8 py-4 rounded-2xl font-poppins font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center uppercase tracking-wider"
               >
                   {t("menu.viewFullMenu")}
-              </Link>
-              <Link
-                href="#contact"
-                  className="bg-transparent border-2 border-chalk-white text-chalk-white hover:bg-chalk-white hover:text-chalkboard px-8 py-4 rounded-full font-poppins font-bold text-lg transition-all duration-300 text-center uppercase tracking-wider"
-              >
-                  {t("contact.reserveTable")}
               </Link>
               </div>
             </div>
@@ -331,7 +315,7 @@ export default function HomePage() {
                     {/* Category Badge */}
                     <div className="inline-flex items-center bg-brush-orange/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
                       <span className="text-brush-orange font-romanian font-bold text-sm uppercase tracking-wider">
-                        Specialitate
+                        {t("features.specialty")}
                       </span>
           </div>
 
@@ -351,13 +335,13 @@ export default function HomePage() {
                     {/* Features */}
                     <div className="flex flex-wrap gap-3 mb-8">
                       <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-romanian backdrop-blur-sm">
-                        Preparat proaspăt
+                        {t("features.freshPrepared")}
                       </span>
                       <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-body backdrop-blur-sm">
-                        Ingrediente locale
+                        {t("features.localIngredients")}
                       </span>
                       <span className="px-4 py-2 bg-chalkboard/20 rounded-full text-chalk-white/70 text-sm font-romanian backdrop-blur-sm">
-                        Rețetă tradițională
+                        {t("features.traditionalRecipe")}
                       </span>
                     </div>
                   </div>
@@ -511,8 +495,8 @@ export default function HomePage() {
                 {/* Map Legend */}
                 <div className="mt-4 bg-chalk-white/10 backdrop-blur-xl rounded-lg p-4 border border-chalk-white/20">
                   <div className="flex items-center text-chalk-white text-sm">
-                    <div className="w-3 h-3 bg-burst-yellow rounded-full mr-2"></div>
-                    <span className="font-romanian">Locații restaurant - Click pe hartă pentru direcții</span>
+                    <div className="w-3 h-3 bg-brush-orange rounded-full mr-2"></div>
+                    <span className="font-romanian">{t("locations.mapLegend")}</span>
                   </div>
                 </div>
               </div>
@@ -552,7 +536,7 @@ export default function HomePage() {
                             href={location.googleMapsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-burst-yellow hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                            className="bg-brush-orange hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
                             title="Deschide în Google Maps"
                           >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -573,7 +557,7 @@ export default function HomePage() {
                       <p className="text-chalk-white/70 font-romanian text-sm">{t("locations.mapInstructions")}</p>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <a href="tel:+40721234567" className="bg-burst-yellow hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110">
+                      <a href="tel:+40721234567" className="bg-brush-orange hover:bg-gold-accent text-chalkboard p-3 rounded-full transition-all duration-300 hover:scale-110">
                         <Phone className="w-5 h-5" />
                       </a>
                     </div>
@@ -816,22 +800,22 @@ export default function HomePage() {
                 </div>
               </div>
               
-              <div className="mb-6">
-                <p className="text-chalk-white/60 text-sm font-body mb-4">{t("footer.followUs")}</p>
-                <div className="flex space-x-3">
-                  <div className="w-8 h-8 bg-burst-yellow rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
-                    <svg className="w-4 h-4 text-chalkboard" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                    </svg>
-                  </div>
-                  <div className="w-8 h-8 bg-burst-yellow rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
-                    <Facebook className="w-4 h-4 text-chalkboard" />
-                  </div>
-                  <div className="w-8 h-8 bg-burst-yellow rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
-                    <Instagram className="w-4 h-4 text-chalkboard" />
+                              <div className="mb-6">
+                  <p className="text-chalk-white/60 text-sm font-body mb-4">{t("footer.followUs")}</p>
+                  <div className="flex space-x-3">
+                    <div className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
+                      <svg className="w-4 h-4 text-chalkboard" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      </svg>
+                    </div>
+                    <div className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
+                      <Facebook className="w-4 h-4 text-chalkboard" />
+                    </div>
+                    <div className="w-8 h-8 bg-brush-orange rounded-full flex items-center justify-center hover:bg-gold-accent transition-colors cursor-pointer">
+                      <Instagram className="w-4 h-4 text-chalkboard" />
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
 
             {/* Pages Column */}
@@ -863,9 +847,9 @@ export default function HomePage() {
                 <input
                   type="email"
                   placeholder={t("footer.enterEmail")}
-                  className="flex-1 bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-l-2xl border border-chalk-white/30 focus:outline-none focus:border-burst-yellow font-body"
+                  className="flex-1 bg-chalk-white/20 text-chalk-white placeholder-chalk-white/60 px-4 py-3 rounded-l-2xl border border-chalk-white/30 focus:outline-none focus:border-brush-orange font-body"
                 />
-                <button className="bg-burst-yellow hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-r-2xl font-poppins font-semibold transition-colors flex items-center">
+                <button className="bg-brush-orange hover:bg-gold-accent text-chalkboard px-6 py-3 rounded-r-2xl font-poppins font-semibold transition-colors flex items-center">
                   {t("footer.subscribe")}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
